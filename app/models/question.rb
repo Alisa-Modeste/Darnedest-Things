@@ -1,12 +1,14 @@
-class Question < ActiveRecord::Base
-  # attr_accessible :title, :body
+# TODO: Switch to PSL and uncomment PgSearch
 
-  include PgSearch
-  pg_search_scope :search_question,
-            against: [:title, :body],
-            using: { :tsearch => {
-              dictionary: "english",
-              any_word: true, prefix: true} }
+class Question < ActiveRecord::Base
+   attr_accessible :title, :body, :user_id
+
+  # include PgSearch
+ #  pg_search_scope :search_question,
+ #            against: [:title, :body],
+ #            using: { :tsearch => {
+ #              dictionary: "english",
+ #              any_word: true, prefix: true} }
 
   has_many(
     :tag_rows,

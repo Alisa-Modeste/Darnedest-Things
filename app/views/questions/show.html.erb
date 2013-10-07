@@ -1,0 +1,8 @@
+<% #TODO: Change questions.body to null:true %>
+Question
+<%= @question.title %>
+<%= @question.body%>
+
+<% @question.tags.each do |tag| %>
+  <%= tag %>
+<% end %>

@@ -3,3 +3,6 @@
   add_index "questions", ["question"], :name => "index_questions_on_questions", unique: true
 
   Comments and recommendations?
+
+  Should answers' show pages redirect to their parent (question) page?
+    StackOverflow's direct link to the answer is a bookmark on the parent's page

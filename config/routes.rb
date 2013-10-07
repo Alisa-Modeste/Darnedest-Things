@@ -6,4 +6,7 @@ WisdomCrowd::Application.routes.draw do
   resource :session, only: [:create, :destroy]
 
   resources :users
+  resources :questions do
+    resources :answers, only: [:new, :create]
+  end
 end

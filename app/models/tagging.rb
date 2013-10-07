@@ -1,5 +1,5 @@
 class Tagging < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :tag_id, :question_id
 
   belongs_to(
     :tag,

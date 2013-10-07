@@ -3,7 +3,7 @@ class Tag < ActiveRecord::Base
 
   has_many(
     :question_rows,
-    class_name: "Taggings",
+    class_name: "Tagging",
     foreign_key: :tag_id,
     primary_key: :id
   )

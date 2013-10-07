@@ -1,9 +1,12 @@
 class Question < ActiveRecord::Base
   # attr_accessible :title, :body
 
+  include PgSearch
+  pg_search_scope :search_question, against: [:title, :body]
+
   has_many(
     :tag_rows,
-    class_name: "Taggings",
+    class_name: "Tagging",
     foreign_key: :question_id,
     primary_key: :id
   )

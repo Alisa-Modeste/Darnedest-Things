@@ -1,8 +1,9 @@
 <% #TODO: Change questions.body to null:true %>
-Question
-<%= @question.title %>
-<%= @question.body%>
+<br>
+<strong>Question</strong> <br>
+<p style="margin: 10px"><%= @question.title %> <br>
+<%= @question.body%><br>
 
 <% @question.tags.each do |tag| %>
-  <%= tag %>
-<% end %>
+  <%= tag.name %>
+<% end %></p>

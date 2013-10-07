@@ -2,7 +2,11 @@ class Question < ActiveRecord::Base
   # attr_accessible :title, :body
 
   include PgSearch
-  pg_search_scope :search_question, against: [:title, :body]
+  pg_search_scope :search_question,
+            against: [:title, :body],
+            using: { :tsearch => {
+              dictionary: "english",
+              any_word: true, prefix: true} }
 
   has_many(
     :tag_rows,
@@ -34,6 +38,12 @@ class Question < ActiveRecord::Base
     :followers,
     through: :follower_rows
   )
+
+  #tags is an array
+  #query is a string of search terms
+  def self.search_database(tags, query)
+    Question.joins(:tags).where("tags.name"=> tags).search_question(query)
+  end
 
 #maybe
   # has_many(

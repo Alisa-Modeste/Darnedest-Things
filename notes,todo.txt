@@ -1,3 +1,5 @@
 1007
   #Maybe
   add_index "questions", ["question"], :name => "index_questions_on_questions", unique: true
+
+  Comments and recommendations?

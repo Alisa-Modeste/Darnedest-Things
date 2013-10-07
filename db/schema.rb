@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007133301) do
+ActiveRecord::Schema.define(:version => 20131007214551) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id", :null => false
@@ -50,11 +50,13 @@ ActiveRecord::Schema.define(:version => 20131007133301) do
   create_table "questions", :force => true do |t|
     t.integer  "user_id",    :null => false
     t.string   "title",      :null => false
-    t.text     "body",       :null => false
+    t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug"
   end
 
+  add_index "questions", ["slug"], :name => "index_questions_on_slug", :unique => true
   add_index "questions", ["user_id"], :name => "index_questions_on_user_id"
 
   create_table "taggings", :force => true do |t|

@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = @current_user
+    @user = self.current_user
 
     render :show
   end

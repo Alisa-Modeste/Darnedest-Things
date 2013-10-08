@@ -1,5 +1,10 @@
+# TODO: Change name to username or nickname or something and make it not null
+
 class User < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :email, :name, :password
+  attr_reader :password
+
+  before_validation :ensure_session_token
 
   has_many(
     :follower_rows,
@@ -51,6 +56,21 @@ class User < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
   )
+
+  def self.generate_session_token
+    SecureRandom.base64(16)
+  end
+
+  def ensure_session_token
+    self.session_token || (self.session_token = self.class.generate_session_token)
+  end
+
+  def password=(password)
+    #self.password_digest = salt_password
+    p "There's a problem defining the password(digest)"
+    #self.password = password
+    self.password_digest = password
+  end
 
   # has_many(
   #   :comments,

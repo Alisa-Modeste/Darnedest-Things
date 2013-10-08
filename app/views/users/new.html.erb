@@ -1,2 +1,22 @@
 Sign Up
 
+<form method="POST" action="<%= users_url %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>
+    Email
+    <input type="text" name="user[email]">
+  </label>
+
+  <label>
+    Name (optional)
+    <input type="text" name="user[name]">
+  </label>
+
+  <label>
+    Password
+    <input type="password" name="user[password]">
+  </label>
+
+  <input type="submit">
+</form>

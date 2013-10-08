@@ -1,0 +1,25 @@
+<% # TODO: Look at answer.response's stripper again; Currently line 23 %>
+Your Profile
+<br>
+Name: <%= @user.name %>
+<br>
+Password: <a href='#'>Change your password</a>
+<br>
+Email address: <%= @user.email %>
+
+<br>
+<h2>Your recent questions</h2>
+<ul>
+  <% @user.questions.each do |question| %>
+    <li><%= question.title %></li>
+  <% end %>
+</ul>
+
+<br>
+<h2>Your recent answers</h2>
+<ul>
+  <% n = 15 %>
+  <% @user.answers.each do |answer| %>
+    <li><%= answer.response.split(/\s+/, n+1)[0...n].join(' ') %></li>
+  <% end %>
+</ul>

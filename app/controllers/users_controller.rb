@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    p "Well, I made it here", params[:user]
     user = User.new(params[:user])
+
 
     if user.save
       self.current_user = user
@@ -14,4 +16,11 @@ class UsersController < ApplicationController
       flash.now[:notice] = user.errors.full_messages
       render :new
     end
+  end
+
+  def show
+    @user = @current_user
+
+    render :show
+  end
 end

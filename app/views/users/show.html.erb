@@ -1,9 +1,10 @@
 <% # TODO: Look at answer.response's stripper again; Currently line 23 %>
 <% # TODO: Hard coded in the number of answers and questions to print %>
+<% # TODO: Maybe give users the option to display their email address %>
 
 
-<% header_title = self.current_user.id == params[:id].to_i ? "Your" : "#{self.current_user.name}'s"%>
-<% body_text = self.current_user.id == params[:id].to_i ? "You have" : "#{self.current_user.name} has"%>
+<% header_title, body_text = self.current_user.id == params[:id].to_i ? ["Your", "You have"] : ["#{self.current_user.name}'s", "#{self.current_user.name} has"] %>
+
 
 <% if self.current_user.id == params[:id].to_i %>
   <%= render "profile" %>

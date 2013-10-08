@@ -36,6 +36,12 @@ Question.create([
     user_id: 2,
     title: "Movies?",
     body: "Have you seen Woody Allen's movie entitled Sleeper? Me neither. #boycott"
+  },
+
+  {
+    user_id: 2,
+    title: "Copied this!",
+    body: "I have a rails 4 application where users define for example a tools database and creates fields that store items like brand, year, etc. Then a CRUD interface is presented before them, based on the fields they defined.\r\n\r\nRight now I have a Database model that looks like this:\r\n\r\nclass Database < ActiveRecord::Base\r\n\r\n  has_many :fields\r\nand a Field Model that looks like this:\r\n\r\nclass Field < ActiveRecord::Base\r\n  belongs_to :database\r\nBasically, right now on the Add Fields page (which is after you have a created a database and defined the fields), I'm creating a unique id and storing that with all the fields on that page, which I then use to group fields into a \"row\" (using a rails groupby statement).\r\n\r\nI have two questions: 1. Is the most efficient way to implement a \"database\"? 2. I can't figure out how to best link the field names you define when you create the database with the fields in the CRUD interface. So for example, If I create a name field when I'm initially defining all of the fields, how can I have it associated with fields in the CRUD interface?\r\n\r\nThanks for all help! If I need to clarify more, please tell!"
   }
 
 ]);

@@ -72,16 +72,14 @@ Tagging.create([
 User.create([
   {
     email: "a",
-    password_digest: "a",
-    name: "a",
-    session_token: "fWcsyC5LUuCV/mMHXMVS6w=="
+    password: "a",
+    name: "a"
   },
 
   {
     email: "b",
-    password_digest: "b",
-    name: "b",
-    session_token: "PmmY1x69HTHIxuRRvNVf1g=="
+    password: "b",
+    name: "b"
   }
 ])
 

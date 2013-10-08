@@ -1,5 +1,5 @@
 class Answer < ActiveRecord::Base
-  attr_accessible :response
+  attr_accessible :response, :question_id, :user_id
 
   validates :response, presence: true
 

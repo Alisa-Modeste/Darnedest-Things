@@ -16,7 +16,6 @@ class QuestionsController < ApplicationController
     question.user_id = self.current_user.id
 
     if question.save
-      p "question id is",question.id
       redirect_to question_url(question.id)
     else
       flash.now[:notice] = question.errors.full_messages

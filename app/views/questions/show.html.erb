@@ -1,5 +1,6 @@
 <% #TODO: Change questions.slug to null:false %>
 <% #TODO: Does calling @question.answers multiple times make multiple queries %>
+<% #TODO: Remove div %>
 <br>
 <strong>Question</strong> <br>
 <p style="margin: 10px"><%= @question.title %> <br>
@@ -13,7 +14,7 @@
 
 <ul>
   <% @question.answers.each do |answer| %>
-    <li><%= answer.response %></li>
+    <li><a id="<%= answer.id %>"></a><%= answer.response %></li>
   <% end %>
 </ul>
 
@@ -26,3 +27,5 @@
   <input type="submit">
 
 </form>
+
+<div style="height: 2000px">

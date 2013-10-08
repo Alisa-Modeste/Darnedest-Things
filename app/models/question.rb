@@ -3,14 +3,14 @@
 # TODO: grep -r 'OPTIMIZE:\|FIXME:\|TODO:' folder/
 
 class Question < ActiveRecord::Base
-   attr_accessible :title, :body
+   attr_accessible :title, :body, :user_id
 
-  # include PgSearch
- #  pg_search_scope :search_question,
- #            against: [:title, :body],
- #            using: { :tsearch => {
- #              dictionary: "english",
- #              any_word: true, prefix: true} }
+  include PgSearch
+  pg_search_scope :search_question,
+            against: [:title, :body],
+            using: { :tsearch => {
+              dictionary: "english",
+              any_word: true, prefix: true} }
 
   has_many(
     :tag_rows,

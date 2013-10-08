@@ -1,5 +1,5 @@
 class Answer < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :response
 
   belongs_to(
     :question,

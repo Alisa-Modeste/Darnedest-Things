@@ -21,7 +21,7 @@
 <form method="post" action="<%= question_answers_url(@question.id) %>">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <textarea cols="40" rows="4"></textarea>
+  <textarea cols="40" rows="4" name="answer[response]"></textarea>
 
   <input type="submit">
 

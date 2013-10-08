@@ -1,4 +1,6 @@
 # TODO: Switch to PSL and uncomment PgSearch
+# TODO: Validations: question title length mininum; Must pick at least one tag
+# TODO: grep -r 'OPTIMIZE:\|FIXME:\|TODO:' folder/
 
 class Question < ActiveRecord::Base
    attr_accessible :title, :body, :user_id

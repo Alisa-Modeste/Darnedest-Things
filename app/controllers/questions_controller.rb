@@ -1,3 +1,6 @@
+# TODO: Get the tags in the right format
+# TODO: Add validation for the existence of tag as well as title length (mentioned elsewhere)
+
 class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])

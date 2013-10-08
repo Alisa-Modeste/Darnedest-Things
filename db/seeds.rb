@@ -67,4 +67,28 @@ Tagging.create([
     tag_id: 1,
     question_id: 2
   }
+]);
+
+User.create([
+  {
+    email: "a",
+    password_digest: "a",
+    name: "a",
+    session_token: "fWcsyC5LUuCV/mMHXMVS6w=="
+  },
+
+  {
+    email: "b",
+    password_digest: "b",
+    name: "b",
+    session_token: "PmmY1x69HTHIxuRRvNVf1g=="
+  }
+])
+
+Answer.create([
+  {
+    question_id: 1,
+    user_id: 1,
+    response: "fggggg"
+  }
 ])

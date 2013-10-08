@@ -1,6 +1,8 @@
 <% # TODO: Tagit or similar %>
+<% # TODO: Get tags %>
 
-<form class="ask-question">
+<form class="ask-question" method="post" action="<%= questions_url %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label>
     Title
     <input type="text" name="question[title]">
@@ -13,7 +15,7 @@
 
   <label>
     Tags
-    <input type="text" name="question[tags]">
+    <input type="text" name="question-tag[tag_ids]">
   </label>
 
   <input type="submit">

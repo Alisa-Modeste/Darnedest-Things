@@ -7,6 +7,6 @@ WisdomCrowd::Application.routes.draw do
 
   resources :users
   resources :questions do
-    resources :answers, only: [:new, :create]
+    resources :answers, only: [:create]
   end
 end

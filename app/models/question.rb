@@ -3,7 +3,7 @@
 # TODO: grep -r 'OPTIMIZE:\|FIXME:\|TODO:' folder/
 
 class Question < ActiveRecord::Base
-   attr_accessible :title, :body, :user_id
+   attr_accessible :title, :body
 
   # include PgSearch
  #  pg_search_scope :search_question,

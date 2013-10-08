@@ -3,10 +3,12 @@ WisdomCrowd::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'root#index'
 
-  resource :session, only: [:create, :destroy]
+  resource :session, only: [:new, :create, :destroy]
 
   resources :users
   resources :questions do
     resources :answers, only: [:create]
   end
+
+  resources :answers, only: :show
 end

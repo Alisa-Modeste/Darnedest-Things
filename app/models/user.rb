@@ -1,4 +1,6 @@
 # TODO: Change name to username or nickname or something and make it not null
+# TODO: put index on email
+# TODO: Use bcrypt
 
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password
@@ -59,6 +61,15 @@ class User < ActiveRecord::Base
 
   def self.generate_session_token
     SecureRandom.base64(16)
+  end
+
+  def self.find_by_credentials(email, password)
+    p "email, password", email, password
+    user = User.find_by_email(email)
+
+    if user && user.password_digest == password
+      user
+    end
   end
 
   def ensure_session_token

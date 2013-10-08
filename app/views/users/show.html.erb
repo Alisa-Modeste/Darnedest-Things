@@ -1,4 +1,5 @@
 <% # TODO: Look at answer.response's stripper again; Currently line 23 %>
+<% # TODO: Hard coded in the number of answers and questions to print %>
 Your Profile
 <br>
 Name: <%= @user.name %>
@@ -13,7 +14,7 @@ Email address: <%= @user.email %>
   <%= "You have not asked any questions"%>
 <% else %>
   <ul>
-    <% @user.questions.each do |question| %>
+    <% @user.questions[0..4].each do |question| %>
       <li><%= question.title %></li>
     <% end %>
   </ul>
@@ -26,7 +27,7 @@ Email address: <%= @user.email %>
 <% else %>
   <ul>
     <% n = 15 %>
-    <% @user.answers.each do |answer| %>
+    <% @user.answers[0..4].each do |answer| %>
       <li><%= answer.response.split(/\s+/, n+1)[0...n].join(' ') %></li>
     <% end %>
   </ul>

@@ -1,4 +1,5 @@
 <% #TODO: Change questions.slug to null:false %>
+<% #TODO: Does calling @question.answers multiple times make multiple queries %>
 <br>
 <strong>Question</strong> <br>
 <p style="margin: 10px"><%= @question.title %> <br>
@@ -7,3 +8,21 @@
 <% @question.tags.each do |tag| %>
   <%= tag.name %>
 <% end %></p>
+
+<strong><%= @question.answers.length %> Answers</strong>
+
+<ul>
+  <% @question.answers.each do |answer| %>
+    <li><%= answer.response %></li>
+  <% end %>
+</ul>
+
+<h3>Add an Answer</h3>
+<form method="post" action="<%= question_answers_url(@question.id) %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <textarea cols="40" rows="4"></textarea>
+
+  <input type="submit">
+
+</form>

@@ -43,6 +43,13 @@ class Question < ActiveRecord::Base
     through: :follower_rows
   )
 
+  has_many(
+    :answers,
+    class_name: "Answer",
+    foreign_key: :question_id,
+    primary_key: :id
+  )
+
   #tags is an array
   #query is a string of search terms
   def self.search_database(tags, query)

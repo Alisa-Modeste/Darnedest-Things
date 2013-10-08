@@ -1,6 +1,8 @@
 class Answer < ActiveRecord::Base
   attr_accessible :response
 
+  validates :response, presence: true
+
   belongs_to(
     :question,
     class_name: "Question",

@@ -8,23 +8,15 @@ class AnswersController < ApplicationController
   end
 
   def create
-    p "What do I get"
-    p
-    p params[:answer]
-    # current_user.id
-
     answer = Answer.new(params[:answer])
     answer.question_id = params[:question_id]
     answer.user_id = current_user.id
 
-   # if answer.save
-    if false
-      render json: "HEllo"
-    else
-      flash.now[:notice] = "answer.errors.full_messages"
-      #flash.now[:notice] = answer.errors.full_messages
-      @question = Question.find(params[:question_id])
-      render "questions/show"
+    unless answer.save
+      flash.now[:notice] = answer.errors.full_messages
     end
+
+    @question = Question.find(params[:question_id])
+    render "questions/show"
   end
 end

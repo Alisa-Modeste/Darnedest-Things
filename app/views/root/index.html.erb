@@ -1,10 +1,11 @@
 Welcome to WC
 
-<section>
+<!-- <section>
   <input type="text">
-</section>
+</section> -->
 
 <form method="post" action="<%= search_url %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label>
     Ask a Question
     <input type="text" name="search">

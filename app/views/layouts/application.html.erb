@@ -8,6 +8,7 @@
 </head>
 <body>
   <%= flash[:notice] %>
+  <%= button_to "Sign Out", session_url, method: "delete" if current_user %>
   <button>Ask a question</button>
 
 <%= yield %>

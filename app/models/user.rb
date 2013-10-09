@@ -76,6 +76,10 @@ class User < ActiveRecord::Base
     self.session_token || (self.session_token = self.class.generate_session_token)
   end
 
+  def reset_session_token!
+    self.session_token = self.class.generate_session_token
+  end
+
   def password=(password)
     #self.password_digest = salt_password
     p "There's a problem defining the password(digest)"

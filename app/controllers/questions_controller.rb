@@ -26,14 +26,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.page(params[:page]).per(10)
-    p "here", @questions
-    p params
-    #render :index
-    render "index"
+    render :index
   end
 
-  def search
-    search = params[:search]
-    Question.search_database(nil, search)
-  end
 end

@@ -7,30 +7,22 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+
+#u=User.where(email: 'addd').first_or_initialize
+
+q = Question.where(title: "AAAAAAAaaaa").first_or_initialize
+q.update_attributes(user_id: 1, body: "Stuff")
+
+q = Question.where(title: "BBBBBBBBBBBbbbbbbbbbbbbbbb").first_or_initialize
+q.update_attributes(user_id: 1, body: "More Stuff")
+
+q = Question.where(title: "Recent Developments in the World of Pastrami").first_or_initialize
+q.update_attributes(user_id: 2, body: "Recent Developments and Prosciutto and You: A Retrospective")
+
+q = Question.where(title: "So tired!").first_or_initialize
+q.update_attributes(user_id: 2, body: "I snoozed my alarm for fourteen hours today. I bet I can beat that tomorrow! #sleepy")
+
 Question.create([
-  {
-    user_id: 1,
-    title: "AAAAAAAaaaa",
-    body: "Stuff"
-  },
-
-  {
-    user_id: 1,
-    title: "BBBBBBBBBBBbbbbbbbbbbbbbbb",
-    body: "More Stuff"
-  },
-
-  {
-    user_id: 2,
-    title: "Recent Developments in the World of Pastrami",
-    body: "Recent Developments and Prosciutto and You: A Retrospective"
-  },
-
-  {
-    user_id: 2,
-    title: "So tired!",
-    body: "I snoozed my alarm for fourteen hours today. I bet I can beat that tomorrow! #sleepy"
-  },
 
   {
     user_id: 2,

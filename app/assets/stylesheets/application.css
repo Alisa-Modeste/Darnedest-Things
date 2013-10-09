@@ -11,3 +11,30 @@
  *= require_self
  *= require_tree .
  */
+
+
+/*#header {
+  position: fixed;
+  top: 0;
+}
+
+#content {
+  margin-top: 100px;
+}*/
+
+#content {
+  float: left;
+  width: 500px;
+}
+
+#page-count {
+  float: left;
+  width: 200px;
+}
+
+.clf:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+

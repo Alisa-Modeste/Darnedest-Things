@@ -1,6 +1,4 @@
-# TODO: Switch to PSL and uncomment PgSearch
 # TODO: Validations: question title length mininum; Must pick at least one tag
-# TODO: grep -r 'OPTIMIZE:\|FIXME:\|TODO:' folder/
 # TODO: Add  SQL indexes to improve query speed. - see Evernote
 
 class Question < ActiveRecord::Base

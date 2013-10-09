@@ -6,3 +6,6 @@
 
   Should answers' show pages redirect to their parent (question) page?
     StackOverflow's direct link to the answer is a bookmark on the parent's page
+
+1009
+  grep -r 'OPTIMIZE:\|FIXME:\|TODO:' app

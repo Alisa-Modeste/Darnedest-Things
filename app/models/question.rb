@@ -1,5 +1,6 @@
 # TODO: Validations: question title length mininum; Must pick at least one tag
 # TODO: Add  SQL indexes to improve query speed. - see Evernote
+# TODO: Make tags necessary? - self.search_database
 
 class Question < ActiveRecord::Base
    attr_accessible :title, :body, :user_id
@@ -52,7 +53,11 @@ class Question < ActiveRecord::Base
   #tags is an array
   #query is a string of search terms
   def self.search_database(tags, query)
-    Question.joins(:tags).where("tags.name"=> tags).search_question(query)
+    if tags
+      Question.joins(:tags).where("tags.name"=> tags).search_question(query)
+    else
+      Question.search_question(query)
+    end
   end
 
 #maybe

@@ -10,3 +10,4 @@ INSERT
 
 
 \d pg_index
+\d questions <-~- look at its indexes

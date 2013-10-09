@@ -12,6 +12,8 @@ gem 'friendly_id'
 gem "pg_search"
 gem 'kaminari'
 
+gem 'jquery-ui-rails'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

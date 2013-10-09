@@ -8,6 +8,10 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    @tags = Tag.all.map do |tag|
+      tag.name
+    end
+
     render :new
   end
 

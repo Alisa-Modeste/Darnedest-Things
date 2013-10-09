@@ -9,3 +9,6 @@
 
 1009
   grep -r 'OPTIMIZE:\|FIXME:\|TODO:' app
+  I put
+    CREATE INDEX index_questions_on_search_questions ON questions USING gin(to_tsvector('english', title || '' || body)
+  using the command line

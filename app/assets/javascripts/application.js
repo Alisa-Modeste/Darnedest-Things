@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require underscore
 //= require jquery.ui.core
 //= require jquery.ui.widget
 //= require jquery.ui.position
@@ -20,7 +19,6 @@
 //= require jquery.ui.effect-blind
 //= require jquery.ui.effect-highlight
 //= require tag-it
-//= require jqcloud-1.0.4
 //= require jquery.tagcloud
 //= require_tree ../../../vendor/assets/javascripts
 //= require_tree .

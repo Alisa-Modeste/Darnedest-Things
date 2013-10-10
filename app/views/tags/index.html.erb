@@ -1,0 +1,6 @@
+Tags
+<ul>
+<% @tags.each_with_index do |tag, i| %>
+<%= (i%4 == 0 && i != 0) ? "<li class='new-line'>".html_safe : "<li>".html_safe %> <%= tag.name %> </li>
+<% end %>
+</ul>

@@ -1,0 +1,15 @@
+.new-line:before {
+/*  content: "Hi";*/
+  clear: both;
+  display: table;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  float: left;
+  display: block;
+  width: 100px;
+  height: 100px;
+}

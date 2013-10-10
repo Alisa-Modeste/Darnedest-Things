@@ -1,5 +1,4 @@
 # TODO: Add validation for the existence of tag as well as title length (mentioned elsewhere)
-# TODO: Put a unique index on tag names
 
 class QuestionsController < ApplicationController
   def show
@@ -20,7 +19,7 @@ class QuestionsController < ApplicationController
     question.user_id = self.current_user.id
 
     tags = params[:question_tags]
-    tags = tags.gsub("/", '\/').split(",")
+    tags = tags.gsub('</', '<\/').split(",")
 
     found_tags = {}
     Tag.where(name: tags).select([:id, :name]).each{ |x| found_tags[ "_#{x.id}" ] = x.name }

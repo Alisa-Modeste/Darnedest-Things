@@ -1,5 +1,4 @@
 # TODO: Change name to username or nickname or something and make it not null
-# TODO: put index on email
 # TODO: Use bcrypt
 
 class User < ActiveRecord::Base

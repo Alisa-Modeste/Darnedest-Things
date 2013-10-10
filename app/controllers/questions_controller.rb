@@ -23,22 +23,16 @@ class QuestionsController < ApplicationController
 
     tags = params[:question_tags]
     tags = tags.split(",")
-    p "These are the tags", tags
-    #tag_ids = Tag.where(name: tags).select(:id).map{ |x| x.id }
-    #found_tags = Tag.where(name: tags).select([:id, :name]).map{ |x| {id: x.id, name: x.name} }
-    found_tag_ids = []
-    found_tag_names = []
 
-    Tag.where(name: tags).select([:id, :name]).each do |x|
-      found_tag_ids << x.id
-      found_tag_names << x.name
-    end
+    found_tags = {}
+    Tag.where(name: tags).select([:id, :name]).each{ |x| found_tags[ "_#{x.id}".to_sym ] = x.name }
 
     tag_ids = []
+
     tags.each do |tag|
-      if found_tag_names.include? tag
-        position = found_tag_names.index(tag)
-        tag_ids << found_tag_ids[position]
+      if found_tags.values.include? tag
+       tag_ids << found_tags.key(tag)[1..-1]
+
       else
         new_tag = Tag.create({name: tag })
         tag_ids << new_tag.id

@@ -2,7 +2,7 @@ class TagsController < ApplicationController
 
   def index
     #pagination
-    @tags = Tag.all
+    @tags = Tag.includes(:questions).all
     render :index
   end
 

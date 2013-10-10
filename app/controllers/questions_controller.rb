@@ -1,6 +1,7 @@
 # TODO: Get the tags in the right format
 # TODO: Add validation for the existence of tag as well as title length (mentioned elsewhere)
 # TODO: Put a unique index on tag names
+# TODO: Escape / character --> \/
 
 class QuestionsController < ApplicationController
   def show

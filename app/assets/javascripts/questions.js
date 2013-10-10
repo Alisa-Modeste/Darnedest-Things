@@ -4,7 +4,9 @@ $(document).ready(function(){
   console.log("tags are", tags)
 
   $("#question_tags").tagit({
-    availableTags: tags
+    // availableTags: tags,
+    tagSource: tags,
+    singleField: true
   });
 
 });

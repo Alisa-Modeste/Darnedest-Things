@@ -12,12 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap.min
 //= require jquery.ui.core
 //= require jquery.ui.widget
-//= require jquery.ui.position
+// require jquery.ui.position
 //= require jquery.ui.autocomplete
-//= require jquery.ui.effect-blind
-//= require jquery.ui.effect-highlight
+// require jquery.ui.effect-blind
+// require jquery.ui.effect-highlight
 //= require tag-it
 //= require jquery.tagcloud
 //= require_tree ../../../vendor/assets/javascripts

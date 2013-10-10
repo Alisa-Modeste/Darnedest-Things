@@ -1,14 +1,7 @@
 Tags
-<!-- <ul>
-<%# @tags.each_with_index do |tag, i| %>
-<%#= (i%4 == 0 && i != 0) ? "<li class='new-line'>".html_safe : "<li>".html_safe %> <%#= tag.name %> x <%#= tag.questions.length %> </li>
-<%# end %>
-</ul> -->
-
-
 <div id="tagcloud">
   <% @tags.each_with_index do |tag, i| %>
-    <a href="#" rel=" <%= tag.questions.length %> "><%= tag.name %></a>
+    <a href="<%= tag_url(tag.id) %>" rel=" <%= tag.questions.length %> "><%= tag.name %></a>
   <% end %>
 </div>
 

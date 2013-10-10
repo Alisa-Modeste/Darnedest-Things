@@ -4,10 +4,12 @@
   display: table;
 }
 
-ul {
+/* TODO: Remove what's below? The tags as blocks */
+
+.index > ul {
   list-style: none;
 }
-li {
+.index li {
   float: left;
   display: block;
   width: 100px;

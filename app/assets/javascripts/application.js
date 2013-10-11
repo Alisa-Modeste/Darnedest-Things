@@ -10,16 +10,12 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
+//= require jquery-1.9.1
 //= require jquery_ujs
-//= require bootstrap.min
-//= require jquery.ui.core
-//= require jquery.ui.widget
-// require jquery.ui.position
-//= require jquery.ui.autocomplete
-// require jquery.ui.effect-blind
-// require jquery.ui.effect-highlight
-//= require tag-it
+//= require jquery-ui-1.10.3.custom
+
 //= require jquery.tagcloud
-//= require_tree ../../../vendor/assets/javascripts
+//= require tag-it
+
 //= require_tree .
+//= require_tree ../../../vendor/assets/javascripts

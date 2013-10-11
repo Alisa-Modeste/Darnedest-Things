@@ -6,7 +6,10 @@ $(document).ready(function(){
   $("#question_tags").tagit({
     // availableTags: tags,
     tagSource: tags,
-    singleField: true
+    select: true
   });
+// $("#question_tags").autocomplete({
+      // source: tags
+    // });
 
 });

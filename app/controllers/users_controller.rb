@@ -7,9 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    p "Well, I made it here", params[:user]
     user = User.new(params[:user])
-
 
     if user.save
       self.current_user = user

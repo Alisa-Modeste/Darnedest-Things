@@ -5,14 +5,20 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+
 
 </head>
 <body>
   <div id="header">
     <%= flash[:notice] %>
     <%= button_to "Sign Out", session_url, method: "delete" if current_user %>
-    <button>Ask a question</button>
+
+    <!-- <form method="post" action="<%= %>">
+      <button>Ask a question</button>
+    </form> -->
+      <% unless "#{request.protocol}#{request.host_with_port}#{request.fullpath}" == new_question_url %>
+      <%= button_to "Ask a question", new_question_url, method: "get" %>
+      <% end %>
   </div>
 
 

@@ -35,7 +35,8 @@ class User < ActiveRecord::Base
 
   has_many(
     :is_following_users,
-    through: :is_following_user_rows
+    through: :is_following_user_rows,
+    source: :is_followed
   )
 
   has_many(
@@ -84,6 +85,15 @@ class User < ActiveRecord::Base
     p "There's a problem defining the password(digest)"
     #self.password = password
     self.password_digest = password
+  end
+
+  def get_follows
+    user = self.current_user
+    user_ids = user.is_following_user_ids
+    question_ids = user.is_following_question_ids
+
+    Question.where("user_id = ? OR id = ?", user_ids, question_ids)
+
   end
 
   # has_many(

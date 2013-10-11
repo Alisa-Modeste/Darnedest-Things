@@ -29,7 +29,7 @@ LEFT OUTER JOIN "taggings" "tag_rows_questions" ON "tag_rows_questions"."questio
 LEFT OUTER JOIN "answers" ON "answers"."question_id" = "questions"."id"
 WHERE "questions"."id" = $1 LIMIT 1
 
-Question.eager_load([:tags, :answers]).find(:answers]).find(params[:id])
+Question.eager_load([:tags, :answers]).find(params[:id])
   eliminates that extra join_table
 SELECT DISTINCT "questions".id
 FROM "questions"

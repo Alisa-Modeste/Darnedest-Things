@@ -30,13 +30,14 @@ class User < ActiveRecord::Base
 
   has_many(
     :followers,
-    through: :follower_rows
+    through: :follower_rows,
+    source: :is_followed
   )
 
   has_many(
     :is_following_users,
     through: :is_following_user_rows,
-    source: :is_followed
+    source: :follower
   )
 
   has_many(
@@ -92,7 +93,8 @@ class User < ActiveRecord::Base
     user_ids = user.is_following_user_ids
     question_ids = user.is_following_question_ids
 
-    Question.where("user_id = ? OR id = ?", user_ids, question_ids)
+    #Question.where("user_id IN ? OR id IN ?", user_ids, question_ids)
+    Question.where({(:user_id => user_ids) | where(:id => question_ids) })
     Answer.where(user_id: user_ids)
 
   end

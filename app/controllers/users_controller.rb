@@ -21,12 +21,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    p "if they are the same", self.current_user.id == params[:id].to_i
-    p "self.current_user.id", self.current_user.id
-    p "== params[:id]", params[:id]
-
-    #if different I can send to another namespace's show page - one with less info
-    @user = self.current_user
+    @user = User.eager_load([:answers, :questions]).find(params[:id])
 
     render :show
   end

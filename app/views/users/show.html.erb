@@ -3,7 +3,7 @@
 <% # TODO: Maybe give users the option to display their email address %>
 
 
-<% header_title, body_text = self.current_user.id == params[:id].to_i ? ["Your", "You have"] : ["#{self.current_user.name}'s", "#{self.current_user.name} has"] %>
+<% header_title, body_text = self.current_user.id == params[:id].to_i ? ["Your", "You have"] : ["#{@user.name}'s", "#{@user.name} has"] %>
 
 
 <% if self.current_user.id == params[:id].to_i %>

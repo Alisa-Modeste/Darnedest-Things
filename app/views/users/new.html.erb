@@ -1,4 +1,7 @@
+<%= link_to "Log In", session_url %>
+
 Sign Up
+
 
 <form method="POST" action="<%= users_url %>">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

@@ -1,8 +1,10 @@
 # TODO: Add validation for the existence of tag as well as title length (mentioned elsewhere)
 
 class QuestionsController < ApplicationController
+  before_filter :ensure_logged_in, only: [:new, :create]
+
   def show
-    @question = Question.find(params[:id])
+    @question = Question.eager_load([:tags, :answers]).find(params[:id])
     render :show
   end
 
@@ -50,6 +52,13 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.page(params[:page]).per(10)
     render :index
+  end
+
+  def ensure_logged_in
+    unless self.current_user
+      flash[:notice] = "You need to be logged in to ask a question"
+      redirect_to new_user_url
+    end
   end
 
 end

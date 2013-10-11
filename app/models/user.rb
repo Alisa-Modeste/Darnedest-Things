@@ -93,6 +93,7 @@ class User < ActiveRecord::Base
     question_ids = user.is_following_question_ids
 
     Question.where("user_id = ? OR id = ?", user_ids, question_ids)
+    Answer.where(user_id: user_ids)
 
   end
 

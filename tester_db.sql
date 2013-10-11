@@ -37,3 +37,7 @@ LEFT OUTER JOIN "taggings" ON "taggings"."question_id" = "questions"."id"
 LEFT OUTER JOIN "tags" ON "tags"."id" = "taggings"."tag_id"
 LEFT OUTER JOIN "answers" ON "answers"."question_id" = "questions"."id"
 WHERE "questions"."id" = $1 LIMIT 1  [["id", 7]]
+
+(
+  t[:name].eq("John").   or(t[:lastname].eq("Smith"))
+)

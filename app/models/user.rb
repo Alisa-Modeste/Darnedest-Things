@@ -15,14 +15,14 @@ class User < ActiveRecord::Base
   )
 
   has_many(
-    :is_following_user_rows,
+    :followed_user_rows,
     class_name: "FollowUser",
     foreign_key: :follower_id,
     primary_key: :id
   )
 
   has_many(
-    :is_following_question_rows,
+    :followed_question_rows,
     class_name: "FollowQuestion",
     foreign_key: :user_id,
     primary_key: :id
@@ -30,19 +30,19 @@ class User < ActiveRecord::Base
 
   has_many(
     :followers,
-    through: :follower_rows,
-    source: :is_followed
+    through: :follower_rows
   )
 
   has_many(
-    :is_following_users,
-    through: :is_following_user_rows,
-    source: :follower
+    :followed_users,
+    through: :followed_user_rows,
+    source: :followed
   )
 
   has_many(
-    :is_following_questions,
-    through: :is_following_question_rows
+    :followed_questions,
+    through: :followed_question_rows,
+    source: :user
   )
 
   #the rest
@@ -89,12 +89,15 @@ class User < ActiveRecord::Base
   end
 
   def get_follows
-    user = self.current_user
+    #user = self.current_user || User.find(1)
+    user = User.find(1)
     user_ids = user.is_following_user_ids
     question_ids = user.is_following_question_ids
 
     #Question.where("user_id IN ? OR id IN ?", user_ids, question_ids)
-    Question.where({(:user_id => user_ids) | where(:id => question_ids) })
+    # Question.where{(:user_id => user_ids) | where(:id => question_ids) }
+    #Question.where{(title.eq_any ['dd'])  | (body =~ '%thank%')}
+    Question.where{(user_id.eq_any user_ids)  | (id.eq_any question_ids)}
     Answer.where(user_id: user_ids)
 
   end

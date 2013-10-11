@@ -5,7 +5,10 @@ WisdomCrowd::Application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
-  resources :users
+  resources :users do
+    resources :answers, :questions, only: :index
+  end
+
   resources :questions do
     resources :answers, only: [:create]
   end
@@ -14,5 +17,6 @@ WisdomCrowd::Application.routes.draw do
   resource :search, only: [:create]
 
   resources :tags, only: [:show, :index]
+
 
 end

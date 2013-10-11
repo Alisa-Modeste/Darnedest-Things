@@ -83,22 +83,18 @@ class User < ActiveRecord::Base
 
   def password=(password)
     #self.password_digest = salt_password
-    p "There's a problem defining the password(digest)"
-    #self.password = password
+
     self.password_digest = password
   end
 
-  def get_follows
-    #user = self.current_user || User.find(1)
-    user = User.find(1)
-    user_ids = user.is_following_user_ids
-    question_ids = user.is_following_question_ids
+  def self.get_follows(user)
+    user_ids = user.followed_user_ids
+    question_ids = user.followed_question_ids
 
-    #Question.where("user_id IN ? OR id IN ?", user_ids, question_ids)
-    # Question.where{(:user_id => user_ids) | where(:id => question_ids) }
-    #Question.where{(title.eq_any ['dd'])  | (body =~ '%thank%')}
-    Question.where{(user_id.eq_any user_ids)  | (id.eq_any question_ids)}
-    Answer.where(user_id: user_ids)
+    questions = Question.where{(user_id.eq_any user_ids) | (id.eq_any question_ids)}
+    answers = Answer.where(user_id: user_ids)
+
+    [questions, answers]
 
   end
 

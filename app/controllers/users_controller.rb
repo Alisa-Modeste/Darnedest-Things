@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_filter :ensure_logged_in, only: [:show]
+
   def new
     render :new
   end

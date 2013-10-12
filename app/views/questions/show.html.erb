@@ -10,7 +10,8 @@
   <%= tag.name %>
 <% end %></p>
 
-<strong><%= @question.answers.length %> Answers</strong>
+<% length = @question.answers.length %>
+<strong><%= length %> Answer<%= "s" unless length == 1 %></strong>
 
 <ul>
   <% @question.answers.each do |answer| %>

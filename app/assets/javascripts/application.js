@@ -13,9 +13,7 @@
 //= require jquery-1.9.1
 //= require jquery_ujs
 //= require jquery-ui-1.10.3.custom
-
 //= require jquery.tagcloud
 //= require tag-it
-
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts

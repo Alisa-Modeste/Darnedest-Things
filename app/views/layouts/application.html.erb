@@ -9,6 +9,31 @@
 
 </head>
 <body>
+
+<header>
+<%#= asset_path %>
+<img src='../images/1381563908_gossip_birds.png'>
+</header>
+
+<header  class='clf'>
+	<section>
+	<h2><em>People</em> say the darn<em>e</em>dest things!</h2>
+	</section>
+	<nav>
+		<ul class='clf'>
+			<li> Tags</li>
+			<li> Questions</li>
+			<li> People</li>
+			<li> Your Profile</li>
+		</ul>
+	</nav>
+</header>
+<aside id='sidebar'>
+	People you are following
+	Questions you are following
+
+</aside>
+
   <div id="header">
     <%= flash[:notice] %>
     <%= button_to "Sign Out", session_url, method: "delete" if current_user %>

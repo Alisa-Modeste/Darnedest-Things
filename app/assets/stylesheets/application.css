@@ -39,3 +39,88 @@
   display: table;
 }
 
+body, div, section, aside, article,img, header, ul, li, a {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	font-family: "Lucida Grande", Arial;
+	list-style: none;
+	text-decoration: none;
+}
+
+
+aside {
+	float:left;
+	width: 200px
+}
+
+img {
+	width : 286px;
+	height: 158x;
+}
+
+
+
+
+
+nav {
+	float: left;
+	width: 600px;
+	/*padding: 13px*/
+}
+
+.clf section {
+	float: left;
+	width: 400px
+}
+
+nav li {
+	display: block;
+	float: left;
+	padding: 17px;
+}
+
+nav li:hover {
+	background-color: red;
+}
+
+header.clf section {
+		
+}
+
+header.clf {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	width: 100%;
+}
+	
+
+
+header h2 {
+	float:left;
+	display: block;
+	width: 300px;
+	font-size: 100%;
+
+	padding: 3px 20px;
+}
+
+/* TODO header h2 em:nth-child(2) {*/
+header h2 em{
+	color: red
+}
+
+
+/*
+.clf {
+	clear: both;
+	display: table;
+}
+*/
+a {
+	color: #a60000
+}
+
+a:hover {
+	text-decoration:underline;
+}

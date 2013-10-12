@@ -4,8 +4,11 @@
 
 <%# yield: user if yield: user %>
 
+<section id="question-stream">
 <ul>
   <% @questions.each do |question| %>
     <li><%= question.title %></li>
   <% end %>
 </ul>
+
+</section>

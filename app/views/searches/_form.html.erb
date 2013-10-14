@@ -1,0 +1,9 @@
+<form method="post" action="<%= search_url %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>
+   Search for an Answer
+    <input type="text" name="search">
+  </label>
+
+  <input type="submit">
+</form>

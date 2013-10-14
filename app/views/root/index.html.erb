@@ -4,14 +4,8 @@ Welcome to WC
   <input type="text">
 </section> -->
 
-<form method="post" action="<%= search_url %>">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>
-    Ask a Question
-    <input type="text" name="search">
-  </label>
-
-  <input type="submit">
-</form>
+<%= render "searches/form"%>
 
 Random/Latest questions with their popular/latest answer
+
+<%= link_to "click", questions_url( {page:  2}) %>

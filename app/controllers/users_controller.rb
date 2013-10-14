@@ -23,4 +23,9 @@ class UsersController < ApplicationController
 
     render :show
   end
+
+  def index
+    @users = User.page(params[:page]).per(50)
+    render :index
+  end
 end

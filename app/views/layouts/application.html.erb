@@ -20,10 +20,10 @@
 	</section>
 	<nav>
 		<ul class='clf'>
-			<li> Tags</li>
-			<li> Questions</li>
-			<li> People</li>
-			<li> Your Profile</li>
+			<li> <a href="<%= tags_url %>">Tags</a></li>
+			<li> <a href="<%= questions_url %>">Questions</a></li>
+			<li> <a href="<%= users_url %>">People</a></li>
+			<%= "<li> <a href=' #{user_url(current_user)} '>Your Profile</a></li>".html_safe if current_user %>
 		</ul>
 	</nav>
 </header>
@@ -40,7 +40,7 @@
     <!-- <form method="post" action="<%= %>">
       <button>Ask a question</button>
     </form> -->
-	
+
       <% unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
       <%= button_to "Ask a question", new_question_url, method: "get" %>
       <% end %>

@@ -61,9 +61,6 @@ img {
 }
 
 
-
-
-
 nav {
 	float: left;
 	width: 600px;
@@ -78,23 +75,25 @@ nav {
 nav li {
 	display: block;
 	float: left;
-	padding: 17px;
+
+}
+
+nav li a {
+  padding: 17px;
 }
 
 nav li:hover {
 	background-color: red;
+  font-weight: bolder;
 }
 
-header.clf section {
-		
-}
 
 header.clf {
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
 	width: 100%;
 }
-	
+
 
 
 header h2 {
@@ -112,16 +111,12 @@ header h2 em{
 }
 
 
-/*
-.clf {
-	clear: both;
-	display: table;
-}
-*/
 a {
-	color: #a60000
+	color: #a60000;
+  display: block;
 }
 
-a:hover {
+a:not(nav a):hover {
 	text-decoration:underline;
 }
+

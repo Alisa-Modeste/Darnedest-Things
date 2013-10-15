@@ -65,12 +65,12 @@ class User < ActiveRecord::Base
   end
 
   def self.find_by_credentials(email, password)
-    p "email, password", email, password
     user = User.find_by_email(email)
 
     if user && user.password_digest == password
       user
     end
+
   end
 
   def ensure_session_token

@@ -15,5 +15,13 @@
 //= require jquery-ui-1.10.3.custom
 //= require jquery.tagcloud
 //= require tag-it
-//= require_tree .
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require wisdom_crowd
+//
+// for more details see: http://emberjs.com/guides/application/
+WisdomCrowd = Ember.Application.create();
+//
 //= require_tree ../../../vendor/assets/javascripts

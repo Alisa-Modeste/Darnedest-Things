@@ -1,5 +1,19 @@
 // For more information see: http://emberjs.com/guides/routing/
 
-WisdomCrowd.Router.map(function() {
-  // this.resource('posts');
+DT.Router.map(function() {
+  //this.resource('d_things', { path: '/' });
+  this.resource('users', { path: '/' }, function(){
+    this.route('new');
+    // this.route('/', { path: '/users' });
+  });
+});
+
+//DT.UsersRoute = Ember.Route.extend({
+DT.UsersRoute = DT.ApplicationRoute.extend({
+  model: function () {
+    console.log("Inside")
+   // return this.store.find('user');
+   // DT.User.find();
+   return DT.User.find();
+  }
 });

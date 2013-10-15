@@ -19,9 +19,10 @@
 //= require ember
 //= require ember-data
 //= require_self
-//= require wisdom_crowd
+//= require darnedest_things
 //
 // for more details see: http://emberjs.com/guides/application/
-WisdomCrowd = Ember.Application.create();
+window.DT = Ember.Application.create();
+DT.ApplicationAdapter = DS.FixtureAdapter.extend();
 //
 //= require_tree ../../../vendor/assets/javascripts

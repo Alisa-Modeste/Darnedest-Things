@@ -26,7 +26,7 @@ describe User do
 
   describe "::find_by_credentials" do
     it "should find user" do
-      attributes = {email: "tttttt@aol.com", password: "tttttt", name: "t"}
+      attributes = {email: "bob@aol.com", password: "fluffy123", name: "bob"}
       user = User.create(attributes)
 
       found_user = User.find_by_credentials(attributes[:email], attributes[:password])
@@ -34,7 +34,7 @@ describe User do
     end
 
     it "shouldn't find the user" do
-      attributes = {email: "tttttt@aol.com", password: "tttttt", name: "t"}
+      attributes = {email: "bob@aol.com", password: "fluffy123", name: "bob"}
 
       found_user = User.find_by_credentials(attributes[:email], attributes[:password])
       expect(found_user).to eq(nil)
@@ -44,7 +44,8 @@ describe User do
 
   describe "#ensure_session_token" do
     it "has set the session token" do
-      user = User.create({email: "tttttt@aol.com", password: "tttttt", name: "t"})
+      user = User.new()
+	  user.ensure_session_token
 
       expect(user.session_token).not_to eq(nil)
     end

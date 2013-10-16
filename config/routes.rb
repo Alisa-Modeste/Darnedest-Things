@@ -1,3 +1,5 @@
+# TODO remove search inddex
+
 WisdomCrowd::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
@@ -15,6 +17,7 @@ WisdomCrowd::Application.routes.draw do
 
   resources :answers, only: :show
   resource :search, only: [:create]
+  resources :searches, only: [:index]
 
   resources :tags, only: [:show, :index]
 

@@ -12,11 +12,11 @@ DT.Router.map(function() {
 });
 
 //DT.UsersRoute = Ember.Route.extend({
-DT.UsersRoute = DT.ApplicationRoute.extend({
-  model: function () {
-    console.log("Inside")
-   // return this.store.find('user');
-   // DT.User.find();
-   return DT.User.find();
-  }
-});
+// DT.UsersRoute = DT.ApplicationRoute.extend({
+//   model: function () {
+//     console.log("Inside")
+//    // return this.store.find('user');
+//    // DT.User.find();
+//    return DT.User.find();
+//   }
+// });

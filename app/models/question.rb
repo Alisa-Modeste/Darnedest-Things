@@ -56,9 +56,8 @@ class Question < ActiveRecord::Base
     if searched_tags
       if all_tags
 
-        tag_length = searched_tags.length
         Question.joins{tags}.where{tags.name.eq_any searched_tags}
-         .group{"questions.id"}.having{count("questions.id") > tag_length-1 }
+         .group{"questions.id"}.having{count("questions.id") == searched_tags.length }
 
       else
         Question.joins(:tags).where{tags.name.eq_any searched_tags}.search_question(query)

@@ -6,7 +6,6 @@ class SearchesController < ApplicationController
     tags = params[:search_tags] == "" ? nil : params[:search_tags]
     tags = format_tags(tags) unless nil?
 
-    p "hey, the tags are",tags,
     all_tags = params[:all_tags] == "true"
 
     #@results = Question.search_database(tags, search)

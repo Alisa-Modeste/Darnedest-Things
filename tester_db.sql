@@ -41,3 +41,31 @@ WHERE "questions"."id" = $1 LIMIT 1  [["id", 7]]
 (
   t[:name].eq("John").   or(t[:lastname].eq("Smith"))
 )
+
+
+
+FROM "questions"
+INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id"
+INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id"
+WHERE ("tags"."name" IN ('Cats') OR "tags"."name" IN ('Dogs'));
+
+
+
+SELECT COUNT("questions"."id"), "questions"."title" FROM "questions"
+INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id"
+INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id"
+WHERE ("tags"."name" IN ('Cats','Dogs'))
+GROUP BY "questions"."id", "questions"."title";
+
+SELECT COUNT("questions"."id"), "questions"."title" FROM "questions"
+INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id"
+INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id"
+WHERE ("tags"."name" IN ('Cats','Dogs'))
+GROUP BY "questions"."id", "questions"."title"
+HAVING COUNT("questions"."id") > 1;
+
+First squeel attempt
+Question.joins{tags}.group{"questions.id"}.having{count("questions.id") > 1 }
+
+Second (with static tags and number)
+Question.joins{tags}.where{tags.name.eq_any ['Dogs', 'Cats']}.group{"questions.id"}.having{count("questions.id") > 1 }

@@ -35,9 +35,6 @@ describe Question do
       tag2 = Tag.create({name: "Moving"})
 
       question.tag_ids = [tag1.id, tag2.id]
-      p question.tag_ids
-      p question.tags
-
 
       search = Question.search_database("Germany", ["Best places", "Moving"], true)
 

@@ -55,24 +55,16 @@ class Question < ActiveRecord::Base
   def self.search_database(query, searched_tags = nil, all_tags = false)
     if searched_tags
       if all_tags
-        # p searched_tags
- #
- #        w= Question.joins(:tags).where{tags.name.in_all searched_tags}
- #        e =Question.joins(:tags).where{tags.name.eq_any searched_tags}
- #
- #        p "each result",w,e
- #
- #        w= Question.joins(:tags).where{tags.name.eq_all [searched_tags[0]]}
- #        e= Question.joins(:tags).where{tags.name.eq_all [searched_tags[1]]}
- #        p "each separately",w,e
- #        Question.joins(:tags).where{tags.name.eq_all searched_tags}.search_question(query)
-       tag_length = searched_tags.length
-       Question.joins{tags}.where{tags.name.eq_any searched_tags}
+
+        tag_length = searched_tags.length
+        Question.joins{tags}.where{tags.name.eq_any searched_tags}
          .group{"questions.id"}.having{count("questions.id") > tag_length-1 }
+
       else
         Question.joins(:tags).where{tags.name.eq_any searched_tags}.search_question(query)
       end
     else
+
       Question.search_question(query)
     end
   end

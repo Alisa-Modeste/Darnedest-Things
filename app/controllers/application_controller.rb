@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def format_tags(tags)
+    p "I'm in the formatter"
     tags.gsub('</', '<\/').split(",")
   end
 end

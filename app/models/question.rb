@@ -52,12 +52,22 @@ class Question < ActiveRecord::Base
 
   #tags is an array
   #query is a string of search terms
-  def self.search_database(query, tags = nil, all_tags = false)
-    if tags
+  def self.search_database(query, searched_tags = nil, all_tags = false)
+    if searched_tags
       if all_tags
-        Question.joins(:tags).where{tags.name.eq_all tags}
+        p searched_tags
+
+        w= Question.joins(:tags).where{tags.name.in_all searched_tags}
+        e =Question.joins(:tags).where{tags.name.eq_any searched_tags}
+
+        p "each result",w,e
+
+        w= Question.joins(:tags).where{tags.name.eq_all [searched_tags[0]]}
+        e= Question.joins(:tags).where{tags.name.eq_all [searched_tags[1]]}
+        p "each separately",w,e
+        Question.joins(:tags).where{tags.name.eq_all searched_tags}.search_question(query)
       else
-        Question.joins(:tags).where{tags.name.eq_any tags}
+        Question.joins(:tags).where{tags.name.eq_any searched_tags}.search_question(query)
       end
     else
       Question.search_question(query)

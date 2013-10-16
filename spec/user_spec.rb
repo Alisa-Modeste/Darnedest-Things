@@ -53,7 +53,7 @@ describe User do
 
   describe "#reset_session_token!" do
     it "should change the session token" do
-      user = User.create({email: "tttttt@aol.com", password: "tttttt", name: "t"})
+      user = User.create({email: "bob@aol.com", password: "fluffy123", name: "bob"})
       old_session_token = user.session_token.dup
 
       user.reset_session_token!
@@ -61,8 +61,18 @@ describe User do
     end
   end
 
-  it "#password"
+  describe "#password" do
+    it "should set the password_digest" do
+      user = User.new()
 
-  it "::get_follows"
+      user.password = "fluffy123"
+
+      expect(user.password_digest).not_to eq(nil)
+    end
+  end
+
+  # describe "::get_follows" do
+ #
+ #  end
 
 end

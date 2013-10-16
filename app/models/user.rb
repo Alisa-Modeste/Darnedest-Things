@@ -1,5 +1,6 @@
 # TODO: Change name to username or nickname or something and make it not null
 # TODO: Use bcrypt
+# TODO: Pretty much validations everywhere
 
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password
@@ -67,7 +68,7 @@ class User < ActiveRecord::Base
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)
 
-    if user && user.password_digest == password
+    if user && user.is_password?(password)
       user
     end
 
@@ -82,21 +83,23 @@ class User < ActiveRecord::Base
   end
 
   def password=(password)
-    #self.password_digest = salt_password
-
-    self.password_digest = password
+    self.password_digest = BCrypt::Password.create(password)
   end
 
-  def self.get_follows(user)
-    user_ids = user.followed_user_ids
-    question_ids = user.followed_question_ids
+  # def self.get_follows(user)
+  #   user_ids = user.followed_user_ids
+  #   question_ids = user.followed_question_ids
+  #
+  #   questions = Question.where{(user_id.eq_any user_ids) | (id.eq_any question_ids)}
+  #   answers = Answer.where(user_id: user_ids)
+  #
+  #   [questions, answers]
+  #
+  # end
 
-    questions = Question.where{(user_id.eq_any user_ids) | (id.eq_any question_ids)}
-    answers = Answer.where(user_id: user_ids)
-
-    [questions, answers]
-
-  end
+  def is_password?(password)
+      BCrypt::Password.new(self.password_digest).is_password?(password)
+    end
 
   # has_many(
   #   :comments,

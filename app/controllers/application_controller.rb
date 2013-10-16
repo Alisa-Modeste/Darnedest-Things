@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_url
     end
   end
+
+  def format_tags(tags)
+    tags.gsub('</', '<\/').split(",")
+  end
 end

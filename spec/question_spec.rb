@@ -55,7 +55,7 @@ describe Question do
 
       search = Question.search_database("Germany", ["Best places", "Moving", "Travel"], true)
 
-      expect(search[0]).to eq(question)
+      expect(search[0]).to eq(nil)
     end
   end
 

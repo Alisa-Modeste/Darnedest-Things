@@ -70,3 +70,4 @@ Question.joins{tags}.group{"questions.id"}.having{count("questions.id") > 1 }
 Second (with static tags and number)
 Question.joins{tags}.where{tags.name.eq_any ['Dogs', 'Cats']}.group{"questions.id"}.having{count("questions.id") > 1 }
 Question.joins{tags}.where{tags.name.eq_any ['Dogs', 'Cats', "Farming"]}.group{"questions.id"}.having{count("questions.id") > 2 }
+Question.joins{tags}.where{tags.name.eq_any ['Dogs', 'Cats', "Farming"]}.group{"questions.id"}.having{count("questions.id") == 3 }

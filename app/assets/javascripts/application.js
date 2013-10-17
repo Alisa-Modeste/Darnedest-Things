@@ -17,7 +17,7 @@
 //= require tag-it
 //= require handlebars
 //= require ember
-// require ember-data
+//= require ember-model-latest
 //= require_self
 //= require darnedest_things
 //= require_tree .

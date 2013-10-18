@@ -103,10 +103,12 @@ class User < ActiveRecord::Base
 
   def as_json(*args)
      # hash = {feed: super(*args)}
-      hash = super(*args)['users']
-
-       hash.merge!({"answer_ids" => self.answer_ids})
-       hash.merge!({"question_ids" => self.question_ids})
+      hash = super(*args)
+     # p "hash", super(*args), super(*args)['users']
+      if hash
+        hash['users'].merge!({"answer_ids" => self.answer_ids})
+        hash['users'].merge!({"question_ids" => self.question_ids})
+      end
 
       # hash.merge!(answer_ids: self.answer_ids)
 #       hash.merge!(question_ids: self.question_ids)

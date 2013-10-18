@@ -1,17 +1,10 @@
 App.Router.map(function(){
-	this.route("about");
-	this.route("contact");
-
-
   //New
 
 
   //Indexes and Shows
-  this.resource("questions");
-  // this.resource('questions', function(){
-    // this.route('new');
+  this.resource("questions", {path: "/questions"});
 
-  // });
 	this.resource("question_new", {path: "/questions/new"});
 	this.resource("question", {path: "/questions/:question_id"});
 

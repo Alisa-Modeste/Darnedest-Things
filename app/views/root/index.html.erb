@@ -19,6 +19,15 @@ Random/Latest questions with their popular/latest answer
 {{input}}
 </script>
 
+<script type="text/x-handlebars" data-template-name="question">
+<h1>One question</h1>
+
+<section id="question">
+{{title}}
+{{content.user.name}}
+</section>
+</script>
+
 <script type="text/x-handlebars" data-template-name="questions">
 <h1>Questions Index</h1>
 
@@ -27,15 +36,6 @@ Random/Latest questions with their popular/latest answer
 {{/each}}
 
 
-</script>
-
-<script type="text/x-handlebars" data-template-name="question">
-<h1>One question</h1>
-
-<section id="question">
-{{title}}
-{{content.user.name}}
-</section>
 </script>
 
 <!-- Users -->

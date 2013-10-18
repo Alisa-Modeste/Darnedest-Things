@@ -20,7 +20,9 @@ class Answer < ActiveRecord::Base
   def as_json(*args)
       hash = super(*args)['answers']
 
-      hash.merge!("user_id" => self.user_id)
-      hash.merge!("question_id" => self.question_id)
+      if hash
+        hash.merge!("user_id" => self.user_id)
+        hash.merge!("question_id" => self.question_id)
+      end
   end
 end

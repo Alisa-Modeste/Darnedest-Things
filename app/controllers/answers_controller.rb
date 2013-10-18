@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
   # TODO: AnswersController
+  respond_to :json
   def show
     answer = Answer.find(params[:id])
     @question = answer.question

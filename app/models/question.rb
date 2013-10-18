@@ -76,10 +76,13 @@ class Question < ActiveRecord::Base
 #     end
 
   def as_json(*args)
-      hash = super(*args)['questions']
-
-      hash.merge!("user_id" => self.user_id)
-      hash.merge!("answer_ids" => self.answer_ids)
+      #hash = super(*args)['questions']
+      hash = (super(*args)['questions'].nil?) ? super(*args) : super(*args)['questions']
+      p "I'm in questions", hash, super(*args)
+      if hash
+        hash.merge!("user_id" => self.user_id)
+        hash.merge!("answer_ids" => self.answer_ids)
+      end
   end
 
 #maybe

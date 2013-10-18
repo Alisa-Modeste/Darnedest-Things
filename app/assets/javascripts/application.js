@@ -18,6 +18,7 @@
 //= require handlebars
 //= require ember
 //= require ember-model-latest
+//= require app/app
 //= require_self
 //= require darnedest_things
 //= require_tree .

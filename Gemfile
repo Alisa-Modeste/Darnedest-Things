@@ -16,6 +16,9 @@ gem "squeel"
 gem 'ember-rails'
 gem 'ember-source'
 
+gem 'newrelic_rpm'
+gem "figaro"
+
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Gems used only for assets and not required

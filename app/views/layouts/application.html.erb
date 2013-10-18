@@ -10,26 +10,45 @@
   <%= csrf_meta_tags %>
 
 
-</head>
-<body>
+  <!-- // <script type="text/javascript" src="lib/ember-model-latest.js"></script>
+  // <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  // <script type="text/javascript" src="app.js"></script>
+  // <script type="text/javascript" src="router.js"></script>
+  // <script type="text/javascript" src="models/question_model.js"></script>
+  // <script type="text/javascript" src="models/tag_model.js"></script>
+  // <script type="text/javascript" src="models/answer_model.js"></script>
+  // <script type="text/javascript" src="models/user_model.js"></script>
+  // <script type="text/javascript" src="controllers/questions_controller.js"></script>
+  // <script type="text/javascript" src="controllers/question_controller.js"></script>
+  //
+  // <script type="text/javascript" src="routes/questions_route.js"></script>
+  // <script type="text/javascript" src="routes/answers_route.js"></script>
+  // <script type="text/javascript" src="routes/users_route.js"></script>
+  // <script type="text/javascript" src="routes/tags_route.js"></script>
+  // <script type="text/javascript" src="alert_view.js"></script> -->
 
-<header>
-<img src='../images/1381563908_gossip_birds.png'>
-</header>
+  <script type="text/x-handlebars" data-template-name="application">
+  <header id='image'>
+  <img src='1381563908_gossip_birds.png'>
+  <h1>Darnedest Things</h1>
 
-<header  class='clf'>
-	<section>
-	<h2><em>People</em> say the darn<em>e</em>dest things!</h2>
-	</section>
-	<nav>
-		<ul class='clf'>
-			<li> <a href="<%= tags_url %>">Tags</a></li>
-			<li> <a href="<%= questions_url %>">Questions</a></li>
-			<li> <a href="<%= users_url %>">People</a></li>
-			<%= "<li> <a href=' #{user_url(current_user)} '>Your Profile</a></li>".html_safe if current_user %>
-		</ul>
-	</nav>
-</header>
+  <div class='clf'></div>
+  <h2><em>People</em> say the darn<em>e</em>dest things!</h2>
+
+  	<nav>
+  		<ul class='clf'>
+  			<li>{{#linkTo "tags"}}Tags{{/linkTo}}</li>
+  			<li>{{#linkTo "questions"}}Questions{{/linkTo}}</li>
+  			<li>{{#linkTo "users"}}People{{/linkTo}}</li>
+  			<li>Your Profile</li>
+  		</ul>
+  	</nav>
+  </header>
+
+  <p>{#linkTo "questions.new"}}Ask a question{/linkTo}}
+
+  {{outlet}}
+  </script>
 <aside id='sidebar'>
 	People you are following
 	Questions you are following

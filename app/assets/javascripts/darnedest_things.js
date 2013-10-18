@@ -1,3 +1,3 @@
 // require_self
-//= require ./store
-//= require_tree ./models
+// require ./store
+// require_tree ./models

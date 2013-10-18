@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  respond_to :html, :json
   before_filter :ensure_logged_in, only: [:show]
 
   def new
@@ -11,8 +11,10 @@ class UsersController < ApplicationController
 
     if user.save
       self.current_user = user
-      redirect_to root_url
+      #redirect_to root_url
+      respond_with(user)
     else
+      # TODO: Some kind of error message
       flash.now[:notice] = user.errors.full_messages
       render :new
     end
@@ -20,12 +22,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.eager_load([:answers, :questions]).find(params[:id])
-
-    render :show
+    # TODO: Eagerloading won't do anything
+    respond_with(@user)
   end
 
   def index
     @users = User.page(params[:page]).per(50)
-    render :index
+    # TODO: Send a query string?
+    respond_with(@user)
   end
 end

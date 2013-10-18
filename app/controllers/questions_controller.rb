@@ -1,11 +1,12 @@
 # TODO: Add validation for the existence of tag as well as title length (mentioned elsewhere)
 
 class QuestionsController < ApplicationController
+  respond_to :json
   before_filter :ensure_logged_in, only: [:new, :create]
 
   def show
     @question = Question.eager_load([:tags, :answers]).find(params[:id])
-    render :show
+    respond_with @question
   end
 
   def new
@@ -41,17 +42,20 @@ class QuestionsController < ApplicationController
     question.tag_ids = tag_ids
 
     if question.save
-      redirect_to question_url(question.id)
+      #redirect_to question_url(question.id)
+      respond_with question
+      # TODO: Json add tags and user
     else
       flash.now[:notice] = question.errors.full_messages
-      render :new
+     # render :new
+     respond_with false
     end
 
   end
 
   def index
     @questions = Question.page(params[:page]).per(30)
-    render :index
+    respond_with @questions
   end
 
 

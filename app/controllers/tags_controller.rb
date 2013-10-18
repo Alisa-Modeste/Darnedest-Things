@@ -1,12 +1,13 @@
 class TagsController < ApplicationController
+  respond_to :json
 
   def index
     @tags = Tag.includes(:questions).order(:name).page(params[:page]).per(40)
-    render :index
+    respond_with(@tags)
   end
 
   def show
     @tag = Tag.find(params[:id])
-    render :show
+    respond_with(@tag)
   end
 end

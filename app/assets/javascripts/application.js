@@ -16,7 +16,7 @@
 //= require jquery.tagcloud
 //= require tag-it
 //= require handlebars
-//= require ember
+//= require ember-1.1.0-beta
 //= require ember-model-latest
 //= require app/app
 //= require_self

@@ -169,7 +169,6 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   ember-rails
-  ember-source
   figaro
   friendly_id
   jquery-rails

@@ -5,5 +5,7 @@ App.QuestionNewController = Ember.ArrayController.extend({
       body: this.get('body'),
       user: this.get('user_id')
     })
+
+    newQuestion.save();
   }
 })

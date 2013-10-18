@@ -14,7 +14,7 @@ gem 'kaminari'
 gem "squeel"
 
 gem 'ember-rails'
-gem 'ember-source'
+#gem 'ember-source'
 
 gem 'newrelic_rpm'
 gem "figaro"

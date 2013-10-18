@@ -1,7 +1,9 @@
 <% # TODO: If you're working with precompiled templates, you don't need to ship the compiler with your deployed application. Instead, you can use the smaller "runtime" build. http://handlebarsjs.com/precompilation.html (handlebars, ember)
+  # TODO: Login, logout buttons, and ask a question
 
+%>
 
-%><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>WisdomCrowd</title>
@@ -41,38 +43,37 @@
   			<li>{{#linkTo "questions"}}Questions{{/linkTo}}</li>
   			<li>{{#linkTo "users"}}People{{/linkTo}}</li>
   			<li>Your Profile</li>
+  			<li>Ask a Question</li>
   		</ul>
   	</nav>
   </header>
 
-  <p>{#linkTo "questions.new"}}Ask a question{/linkTo}}
+
+<div id="content">
 
   {{outlet}}
+</div>
   </script>
-<aside id='sidebar'>
-	People you are following
-	Questions you are following
 
-</aside>
 
-  <div id="header">
-    <%= flash[:notice] %>
-    <%= button_to "Sign Out", session_url, method: "delete" if current_user %>
+
+    <%#= flash[:notice] %>
+    <%#= button_to "Sign Out", session_url, method: "delete" if current_user %>
 
     <!-- <form method="post" action="<%= %>">
       <button>Ask a question</button>
     </form> -->
 
-      <% unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
-      <%= button_to "Ask a question", new_question_url, method: "get" %>
-      <% end %>
-  </div>
+      <%# unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
+      <%#= button_to "Ask a question", new_question_url, method: "get" %>
+      <%# end %>
 
 
 
-  <div id="content">
-    <%= yield %>
-  </div>
+
+  <!-- <div id="content">
+    <%#= yield %>
+  </div> -->
 
 </body>
 </html>

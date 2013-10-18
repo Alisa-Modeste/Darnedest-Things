@@ -49,29 +49,11 @@
 
   {{outlet}}
   </script>
-<aside id='sidebar'>
-	People you are following
-	Questions you are following
-
-</aside>
-
-  <div id="header">
-    <%= flash[:notice] %>
-    <%= button_to "Sign Out", session_url, method: "delete" if current_user %>
-
-    <!-- <form method="post" action="<%= %>">
-      <button>Ask a question</button>
-    </form> -->
-
-      <% unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
-      <%= button_to "Ask a question", new_question_url, method: "get" %>
-      <% end %>
-  </div>
 
 
 
   <div id="content">
-    <%= yield %>
+    <%#= yield %>
   </div>
 
 </body>

@@ -34,4 +34,11 @@ class UsersController < ApplicationController
     # TODO: Send a query string?
     respond_with(@users)
   end
+
+  def getSelf
+    return nil unless self.current_user
+
+    @user = self.current_user
+    respond_with(@user)
+  end
 end

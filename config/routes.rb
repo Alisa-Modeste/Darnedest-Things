@@ -11,6 +11,12 @@ WisdomCrowd::Application.routes.draw do
     resources :answers, :questions, only: :index
   end
 
+  # scope 'self', as: "current" do
+#     resource :user, only: :show
+#   end
+
+match "/users/current", action: 'getSelf', via: [:get], controller: "users"
+
   resources :questions do
     resources :answers, only: [:create]
   end

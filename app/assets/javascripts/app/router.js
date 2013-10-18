@@ -6,7 +6,7 @@ App.Router.map(function(){
   //Indexes and Shows
   this.resource("questions", {path: "/questions"});
 
-	//this.resource("question_new", {path: "/questions/new"});
+	this.resource("question_new", {path: "/questions/new"});
 	this.resource("question", {path: "/questions/:question_id"});
 
 	this.resource("users");

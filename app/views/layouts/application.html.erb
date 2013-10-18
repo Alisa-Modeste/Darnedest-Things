@@ -55,6 +55,20 @@
 
 </div>
   </script>
+  <!-- // TODO: Set it to retrieveCurrentUser -->
+  <script type="text/x-handlebars" data-template-name="question_new">
+
+  <h1>New question</h1>
+  Title
+  {{input type="text" value=title}}
+  {{input type="hidden" value=1  }}
+  <br>
+  Body
+   <br>
+  {{textarea cols="100" rows="20" value=body}}
+  <br>
+  <button {{action save}}>Save</button>
+  </script>
 
   <script type="text/x-handlebars" data-template-name="question">
   <h1>One question</h1>

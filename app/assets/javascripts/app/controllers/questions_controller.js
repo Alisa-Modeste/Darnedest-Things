@@ -1,4 +1,4 @@
-App.QuestionsController = Ember.ArrayController.extend();
+//App.QuestionsController = Ember.ArrayController.extend();
 
 
 // App.QuestionsController = Ember.ArrayController.extend({

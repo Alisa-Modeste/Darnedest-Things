@@ -50,11 +50,11 @@
 
 
 <div id="content">
-
   {{outlet}}
+  <%= yield %>
+
 </div>
   </script>
-
 
 
     <%#= flash[:notice] %>
@@ -72,8 +72,19 @@
 
 
   <!-- <div id="content">
-    <%#= yield %>
-  </div> -->
+=======
+    <%#= flash[:notice] %>
+    <%#= button_to "Sign Out", session_url, method: "delete" if current_user %>
+
+    <!-- <form method="post" action="<%= %>">
+      <button>Ask a question</button>
+    </form> -->
+
+      <%# unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
+      <%#= button_to "Ask a question", new_question_url, method: "get" %>
+      <%# end %>
+
+
 
 </body>
 </html>

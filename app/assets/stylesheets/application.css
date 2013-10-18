@@ -76,6 +76,10 @@ img {
   border-top: 7px solid green;
 }*/
 
+#content {
+  margin-left: 300px;
+}
+
 #answers article:before{
 	height: 200px;
 	width: 400px;

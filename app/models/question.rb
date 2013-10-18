@@ -75,6 +75,14 @@ class Question < ActiveRecord::Base
 #       hash.merge!(user_id: self.user_id)
 #     end
 
+  def as_json(*args)
+    p ("super args", super(*args))
+      hash = super(*args)['questions']
+
+      hash.merge!("user_id" => self.user_id)
+      hash.merge!("answer_ids" => self.answer_ids)
+  end
+
 #maybe
   # has_many(
   #   :recommendation_rows,

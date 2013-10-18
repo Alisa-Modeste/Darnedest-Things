@@ -5,6 +5,7 @@ App.User = Ember.Model.extend({
 
 App.User.url = "/users";
 App.User.adapter = Ember.RESTAdapter.create();
+App.User.collectionKey = "users"
 
 // App.User.adapter = Ember.FixtureAdapter.create();
 // App.User.FIXTURES = [

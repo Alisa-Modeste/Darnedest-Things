@@ -105,8 +105,11 @@ class User < ActiveRecord::Base
      # hash = {feed: super(*args)}
       hash = super(*args)['users']
 
-      hash.merge!("answer_ids" => self.answer_ids)
-      hash.merge!("question_ids" => self.question_ids)
+       hash.merge!({"answer_ids" => self.answer_ids})
+       hash.merge!({"question_ids" => self.question_ids})
+
+      # hash.merge!(answer_ids: self.answer_ids)
+#       hash.merge!(question_ids: self.question_ids)
   end
 
   # has_many(

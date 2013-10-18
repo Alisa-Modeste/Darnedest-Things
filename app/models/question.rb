@@ -76,7 +76,6 @@ class Question < ActiveRecord::Base
 #     end
 
   def as_json(*args)
-    p ("super args", super(*args))
       hash = super(*args)['questions']
 
       hash.merge!("user_id" => self.user_id)

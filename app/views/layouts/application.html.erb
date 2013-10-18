@@ -63,6 +63,15 @@
   {{title}}
   {{user.name}}
   </section>
+
+   <section id="answers">
+   {{#each answer in content.answers}}
+   I am inside
+   <article>
+     {{answer.response}}
+   </article>
+   {{/each}}
+   </section>
   </script>
 
   <script type="text/x-handlebars" data-template-name="questions">
@@ -105,8 +114,17 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="tag">
-  <h1>One tag</h1>
-  {{name}}
+  <h1>{{name}}</h1>
+
+  <section id="question-stream">
+
+
+  {{#each q in content.questions}}
+  <li>{{#linkTo "question" q.id}} {{q.title}} {{/linkTo}}
+  By {{user.name}}</li>
+  {{/each}}
+
+    </section>
   </script>
 
 

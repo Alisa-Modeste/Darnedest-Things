@@ -23,4 +23,9 @@ class AnswersController < ApplicationController
 
     respond_to(answer)
   end
+
+  def index
+    @answers = Answer.page(params[:page]).per(30)
+    respond_with(@answers)
+  end
 end

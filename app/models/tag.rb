@@ -12,4 +12,12 @@ class Tag < ActiveRecord::Base
     :questions,
     through: :question_rows
   )
+
+  def as_json(*args)
+
+      hash = (super(*args)['tags'].nil?) ? super(*args) : super(*args)['tags']
+
+      hash.merge!({"question_ids" => self.question_ids})
+
+  end
 end

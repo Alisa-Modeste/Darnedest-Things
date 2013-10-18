@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  respond_to :html, :json
+#  respond_to :html, :json
+  respond_to :json
   before_filter :ensure_logged_in, only: [:show]
 
   def new
@@ -29,6 +30,6 @@ class UsersController < ApplicationController
   def index
     @users = User.page(params[:page]).per(50)
     # TODO: Send a query string?
-    respond_with(@user)
+    respond_with(@users)
   end
 end

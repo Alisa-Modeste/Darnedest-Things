@@ -7,22 +7,24 @@ App.Question = Ember.Model.extend({
   answers: Ember.hasMany('App.Answer', {key: 'answer_ids', embedded: false })
 });
 
-App.Question.adapter = Ember.FixtureAdapter.create();
-App.Question.FIXTURES = [
-  {
-    id: 1,
-    title: "New question",
-    body: "My content",
-    user_id: 1,
-    answer_ids: [1]
-  },
+App.Question.url = "/questions";
+App.Question.adapter = Ember.RESTAdapter.create();
 
-  {
-    id: 2,
-    title: "Second question",
-    body: "Some other content",
-    user_id: 2
-  }
-]
+// App.Question.FIXTURES = [
+//   {
+//     id: 1,
+//     title: "New question",
+//     body: "My content",
+//     user_id: 1,
+//     answer_ids: [1]
+//   },
+//
+//   {
+//     id: 2,
+//     title: "Second question",
+//     body: "Some other content",
+//     user_id: 2
+//   }
+// ]
 
 //App.Question.createRecord({})

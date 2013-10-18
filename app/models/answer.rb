@@ -16,4 +16,11 @@ class Answer < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
   )
+
+  def as_json(*args)
+      hash = {feed: super(*args)}
+
+      hash.merge!(user_id: self.user_id)
+      hash.merge!(question_id: self.question_id)
+  end
 end

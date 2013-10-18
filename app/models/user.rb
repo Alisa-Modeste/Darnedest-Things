@@ -99,7 +99,17 @@ class User < ActiveRecord::Base
 
   def is_password?(password)
       BCrypt::Password.new(self.password_digest).is_password?(password)
-    end
+  end
+
+  def as_json(*args)
+     # hash = {feed: super(*args)}
+      hash = super(*args)['users']
+      p "the hash is", hash
+
+      hash.merge!("answer_ids" => self.answer_ids)
+      hash.merge!("question_ids" => self.question_ids)
+      p "tnows", hash
+  end
 
   # has_many(
   #   :comments,

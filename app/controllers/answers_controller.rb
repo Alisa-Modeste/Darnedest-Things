@@ -4,7 +4,8 @@ class AnswersController < ApplicationController
     answer = Answer.find(params[:id])
     @question = answer.question
 
-    redirect_to(question_url(@question.id, anchor: answer.id))
+    #redirect_to(question_url(@question.id, anchor: answer.id))
+    respond_with(answer)
   end
 
   def create
@@ -17,6 +18,8 @@ class AnswersController < ApplicationController
     end
 
     @question = Question.find(params[:question_id])
-    render "questions/show"
+    #render "questions/show"
+
+    respond_to(answer)
   end
 end

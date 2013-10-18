@@ -68,12 +68,12 @@ class Question < ActiveRecord::Base
     end
   end
 
-  def as_json(*args)
-      hash = {feed: super(*args)}
-
-      hash.merge!(answer_ids: self.answer_ids)
-      hash.merge!(user_id: self.user_id)
-    end
+  # def as_json(*args)
+#       hash = {feed: super(*args)}
+#
+#       hash.merge!(answer_ids: self.answer_ids)
+#       hash.merge!(user_id: self.user_id)
+#     end
 
 #maybe
   # has_many(

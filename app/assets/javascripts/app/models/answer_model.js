@@ -4,6 +4,7 @@ App.Answer = Ember.Model.extend({
  // question_id: Ember.attr("number"),
   response: Ember.attr("string"),
   question: Ember.belongsTo('App.Question', {key: 'question_id', embedded: false }),
+  user: question: Ember.belongsTo('App.User', {key: 'user_id', embedded: false })
 });
 
 // App.Answer.adapter = Ember.FixtureAdapter.create();
@@ -24,3 +25,4 @@ App.Answer = Ember.Model.extend({
 
 App.Answer.url = "/answers";
 App.Answer.adapter = Ember.RESTAdapter.create();
+App.User.collectionKey = "answers"

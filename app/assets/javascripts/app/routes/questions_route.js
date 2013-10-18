@@ -5,9 +5,9 @@ App.QuestionsRoute = Ember.Route.extend({
   }
 });
 
-App.QuestionRoute = Ember.Route.extend({
-  model: function(params){
-
-     return App.Question.find(params.question_id);
-  }
-});
+// App.QuestionRoute = Ember.Route.extend({
+//   model: function(params){
+//
+//      return App.Question.find(params.question_id);
+//   }
+// });

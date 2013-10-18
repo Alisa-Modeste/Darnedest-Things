@@ -5,9 +5,9 @@ class QuestionsController < ApplicationController
   before_filter :ensure_logged_in, only: [:new, :create]
 
   def show
-    #@question = Question.eager_load([:tags, :answers]).find(params[:id])
-    @question = Question.find(params[:id])
-    respond_with @question
+    @question = Question.eager_load([:tags, :answers]).find(params[:id])
+    #@question = Question.find(params[:id])
+    respond_with(@question)
   end
 
   def new
@@ -56,7 +56,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.page(params[:page]).per(30)
-    respond_with @questions
+    respond_with(@questions)
   end
 
 

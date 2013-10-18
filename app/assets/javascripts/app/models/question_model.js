@@ -9,6 +9,7 @@ App.Question = Ember.Model.extend({
 
 App.Question.url = "/questions";
 App.Question.adapter = Ember.RESTAdapter.create();
+App.Question.collectionKey = "questions"
 
 // App.Question.FIXTURES = [
 //   {

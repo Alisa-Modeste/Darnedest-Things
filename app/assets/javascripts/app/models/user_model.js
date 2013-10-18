@@ -1,6 +1,7 @@
 App.User = Ember.Model.extend({
   name: Ember.attr("string"),
-  questions: Ember.hasMany('App.Question', {key: 'question_ids', embedded: false })
+  questions: Ember.hasMany('App.Question', {key: 'question_ids', embedded: false }),
+  answers: Ember.hasMany('App.Answer', {key: 'answer_ids', embedded: false })
 });
 
 App.User.url = "/users";

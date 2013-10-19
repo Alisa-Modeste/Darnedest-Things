@@ -1,4 +1,4 @@
-App.TagsRoute = Ember.Route.extend({
+App.TagsIndexRoute = Ember.Route.extend({
   model: function(){
      return App.Tag.find();
   }

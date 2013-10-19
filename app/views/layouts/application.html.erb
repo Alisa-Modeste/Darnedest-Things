@@ -148,22 +148,29 @@
   <!-- Tags -->
 
   <script type="text/x-handlebars" data-template-name="tags">
+  <h1>Tags Header</h1>
+  {{outlet}}
+
+  </script>
+  
+  
+  <script type="text/x-handlebars" data-template-name="tags/index">
   <h1>Tags Index</h1>
   {{content}}
   {{#each item in model}}
-    <li>{{#linkTo "tag" item.id}} {{item}} {{/linkTo}}</li>
+    <li>{{#linkTo "tags.tag" item.id}} {{item}} {{/linkTo}}</li>
   {{/each}}
 
   </script>
 
-  <script type="text/x-handlebars" data-template-name="tag">
+  <script type="text/x-handlebars" data-template-name="tags/tag">
   <h1>{{name}}</h1>
 
   <section id="question-stream">
 
 
   {{#each q in content.questions}}
-  <li>{{#linkTo "question" q.id}} {{q.title}} {{/linkTo}}
+  <li>{{#linkTo "questions.question" q.id}} {{q.title}} {{/linkTo}}
   By {{user.name}}</li>
   {{/each}}
 

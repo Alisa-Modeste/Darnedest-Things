@@ -1,13 +1,4 @@
 App.Router.map(function(){
-
-  //New
-
-
-  //Indexes and Shows
-  // this.resource("questions", {path: "/questions"});
-
-	// this.resource("question_new", {path: "/questions/new"});
-	// this.resource("question", {path: "/questions/:question_id"});
 	
 	this.resource("questions", {path: "/questions"}, function(){
 		this.route('new', {path: "/questions/new"});
@@ -20,12 +11,11 @@ App.Router.map(function(){
 		this.route('user', {path: "/users/:user_id"});
 
 	});
+	
+	this.resource("tags", {path: "/tags"}, function(){
+		this.route('new', {path: "/tags/new"});
+		this.route('tag', {path: "/tags/:tag_id"});
 
-	// this.resource("users");
-	// this.resource("user", {path: "/users/:user_id"});
-
-	this.resource("tags");
-	this.resource("tag", {path: "/tags/:tag_id"});
-
+	});
 
 });

@@ -11,24 +11,6 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
-
-  <!-- // <script type="text/javascript" src="lib/ember-model-latest.js"></script>
-  // <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  // <script type="text/javascript" src="app.js"></script>
-  // <script type="text/javascript" src="router.js"></script>
-  // <script type="text/javascript" src="models/question_model.js"></script>
-  // <script type="text/javascript" src="models/tag_model.js"></script>
-  // <script type="text/javascript" src="models/answer_model.js"></script>
-  // <script type="text/javascript" src="models/user_model.js"></script>
-  // <script type="text/javascript" src="controllers/questions_controller.js"></script>
-  // <script type="text/javascript" src="controllers/question_controller.js"></script>
-  //
-  // <script type="text/javascript" src="routes/questions_route.js"></script>
-  // <script type="text/javascript" src="routes/answers_route.js"></script>
-  // <script type="text/javascript" src="routes/users_route.js"></script>
-  // <script type="text/javascript" src="routes/tags_route.js"></script>
-  // <script type="text/javascript" src="alert_view.js"></script> -->
-
   <script type="text/x-handlebars" data-template-name="application">
   <header id='image'>
   <img src='1381563908_gossip_birds.png'>
@@ -51,16 +33,33 @@
 
 <div id="content">
   {{outlet}}
-   <%#= yield %>
 
 </div>
   </script>
- <!--   <script type="text/x-handlebars" data-template-name="question">
-  {{outlet}}
-   </section>
-  </script>
-  -->
+  
+  
+  
+  
+  
+  <!-- Questions -->
+  
+  
+
   <!-- // TODO: Set it to retrieveCurrentUser -->
+  
+  <script type="text/x-handlebars" data-template-name="questions/oldnew">
+
+  <h1>New question</h1>
+  Title
+  {{input type="text" value=title}}
+  {{input type="hidden" value=1  }}
+  <br>
+  Body
+   <br>
+  {{textarea cols="100" rows="20" value=body}}
+  <br>
+  <button {{action save}}>Save</button>
+  </script>
   
   <script type="text/x-handlebars" data-template-name="questions/new">
 
@@ -169,8 +168,8 @@
   <section id="question-stream">
 
 
-  {{#each q in content.questions}}
-  <li>{{#linkTo "questions.question" q.id}} {{q.title}} {{/linkTo}}
+  {{#each question in content.questions}}
+  <li>{{#linkTo "questions.question" question.id}} {{question.title}} {{/linkTo}}
   By {{user.name}}</li>
   {{/each}}
 

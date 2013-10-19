@@ -5,4 +5,3 @@ App.Session = Ember.Model.extend({
 
 App.Session.url = "/session";
 App.Session.adapter = Ember.RESTAdapter.create();
-// App.Tag.collectionKey = "tags"

@@ -4,10 +4,3 @@ App.QuestionsIndexRoute = Ember.Route.extend({
      return App.Question.find();
   }
 });
-
-// App.QuestionRoute = Ember.Route.extend({
-//   model: function(params){
-//
-//      return App.Question.find(params.question_id);
-//   }
-// });

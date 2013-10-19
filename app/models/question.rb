@@ -76,11 +76,13 @@ class Question < ActiveRecord::Base
 #     end
 
   def as_json(*args)
-      #hash = super(*args)['questions']
+      #TODO: Merge the three merge lines
       hash = (super(*args)['questions'].nil?) ? super(*args) : super(*args)['questions']
 
       hash.merge!("user_id" => self.user_id)
       hash.merge!("answer_ids" => self.answer_ids)
+      hash.merge!("tag_ids" => self.tag_ids)
+      #hash.merge!("tags" => self.tags)
 
   end
 

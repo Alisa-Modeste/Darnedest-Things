@@ -66,12 +66,14 @@
   <h1>New question</h1>
   Title
   {{input type="text" value=title}}
-  {{input type="hidden" value=1  }}
+  {{input type="text" value=user  }}
   <br>
   Body
    <br>
   {{textarea cols="100" rows="20" value=body}}
   <br>
+  
+  {{input type="text" value=tags class="tagItMe"}}
   <button {{action save}}>Save</button>
   </script>
 

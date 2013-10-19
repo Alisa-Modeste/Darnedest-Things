@@ -17,5 +17,11 @@ App.Router.map(function(){
 		this.route('tag', {path: "/:tag_id"});
 
 	});
+	
+	this.resource("session", {path: "/session"}, function(){
+		this.route('new', {path: "/new"});
+		this.route('delete', {path: "/delete"});
+
+	});
 
 });

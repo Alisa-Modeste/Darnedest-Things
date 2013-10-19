@@ -172,7 +172,7 @@
 
   {{#each question in content.questions}}
   <li>{{#linkTo "questions.question" question.id}} {{question.title}} {{/linkTo}}
-  By {{user.name}}</li>
+  By {{question.user.name}}</li>
   {{/each}}
 
     </section>

@@ -2,7 +2,7 @@
 
 class QuestionsController < ApplicationController
   respond_to :json
-  before_filter :ensure_logged_in, only: [:new, :create]
+  #before_filter :ensure_logged_in, only: [:new, :create]
 
   def show
     @question = Question.eager_load([:tags, :answers]).find(params[:id])
@@ -20,27 +20,29 @@ class QuestionsController < ApplicationController
 
   def create
     question = Question.new(params[:question])
+    #question = Question.new({title: params[:title], body: params[:body]})
     question.user_id = self.current_user.id
 
-    tags = params[:question_tags]
-    tags = format_tags(tags)
+	p "question is",question
+   # tags = params[:question_tags]
+    # tags = format_tags(tags)
 
-    found_tags = {}
-    Tag.where(name: tags).select([:id, :name]).each{ |x| found_tags[ "_#{x.id}" ] = x.name }
+    # found_tags = {}
+    # Tag.where(name: tags).select([:id, :name]).each{ |x| found_tags[ "_#{x.id}" ] = x.name }
 
-    tag_ids = []
+    # tag_ids = []
 
-    tags.each do |tag|
-      if found_tags.values.include? tag
-       tag_ids << found_tags.key(tag)[1..-1]
+    # tags.each do |tag|
+      # if found_tags.values.include? tag
+       # tag_ids << found_tags.key(tag)[1..-1]
 
-      else
-        new_tag = Tag.create({name: tag })
-        tag_ids << new_tag.id
-      end
-    end
+      # else
+        # new_tag = Tag.create({name: tag })
+        # tag_ids << new_tag.id
+      # end
+    # end
 
-    question.tag_ids = tag_ids
+    # question.tag_ids = tag_ids
 
     if question.save
       #redirect_to question_url(question.id)

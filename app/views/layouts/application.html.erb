@@ -47,21 +47,7 @@
   
   
 
-  <!-- // TODO: Set it to retrieveCurrentUser -->
-  
-  <script type="text/x-handlebars" data-template-name="questions/oldnew">
-
-  <h1>New question</h1>
-  Title
-  {{input type="text" value=title}}
-  {{input type="hidden" value=1  }}
-  <br>
-  Body
-   <br>
-  {{textarea cols="100" rows="20" value=body}}
-  <br>
-  <button {{action save}}>Save</button>
-  </script>
+  <!-- // TODO: Set up retrieveCurrentUser -->
   
   <script type="text/x-handlebars" data-template-name="questions/new">
 
@@ -79,22 +65,29 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="questions/question">
-  <h1>One question</h1>
+	<h1>One question</h1>
 
-  <section id="question">
-  {{title}}
-  {{user.name}}
-  </section>
+	  <section id="question">
+	  {{title}}
+	  {{user.name}}
+	  </section>
 
-   <section id="answers">
-   {{#each answer in content.answers}}
-   I am inside
-   <article>
-     {{answer.response}}
-   </article>
-   {{/each}}
-   </section>
-  </script>
+	   <section id="answers">
+		   {{#each answer in content.answers}}
+			   <article>
+				 {{answer.response}}
+			   </article>
+		   {{/each}}
+	   </section>
+	   
+	   Add an Answer
+	   
+	   <br>
+	  {{textarea cols="100" rows="20" value=response}}
+	  <br>
+
+	  <button {{action save}}>Save</button>
+	  </script>
 
  
   

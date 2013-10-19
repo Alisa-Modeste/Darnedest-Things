@@ -18,10 +18,10 @@ class AnswersController < ApplicationController
       flash.now[:notice] = answer.errors.full_messages
     end
 
-    @question = Question.find(params[:question_id])
+    #@question = Question.find(params[:question_id])
     #render "questions/show"
 
-    respond_to(answer)
+    respond_with(answer)
   end
 
   def index

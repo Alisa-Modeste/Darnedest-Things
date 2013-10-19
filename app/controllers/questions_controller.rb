@@ -24,34 +24,38 @@ class QuestionsController < ApplicationController
     question.user_id = self.current_user.id
 
 	p "question is",question
-   # tags = params[:question_tags]
-    # tags = format_tags(tags)
+   tags = params[:question_tags]
+   # tags = format_tags(tags) unless tags.nil?
 
-    # found_tags = {}
-    # Tag.where(name: tags).select([:id, :name]).each{ |x| found_tags[ "_#{x.id}" ] = x.name }
+   tags = (tags.nil?) ? [] : format_tags(tags)
+    found_tags = {}
+    Tag.where(name: tags).select([:id, :name]).each{ |x| found_tags[ "_#{x.id}" ] = x.name }
 
-    # tag_ids = []
+    tag_ids = []
 
-    # tags.each do |tag|
-      # if found_tags.values.include? tag
-       # tag_ids << found_tags.key(tag)[1..-1]
+    tags.each do |tag|
+      if found_tags.values.include? tag
+       tag_ids << found_tags.key(tag)[1..-1]
 
-      # else
-        # new_tag = Tag.create({name: tag })
-        # tag_ids << new_tag.id
-      # end
-    # end
+      else
+        new_tag = Tag.create({name: tag })
+        tag_ids << new_tag.id
+      end
+    end
 
-    # question.tag_ids = tag_ids
+    question.tag_ids = tag_ids
 
     if question.save
+	p "question had no errors", question
       #redirect_to question_url(question.id)
-      respond_with question
+      respond_with(question)
       # TODO: Json add tags and user
     else
+	p "the errors",question.errors.full_messages
       flash.now[:notice] = question.errors.full_messages
      # render :new
-     respond_with false
+     #respond_with false
+     respond_with question.errors.full_messages
     end
 
   end

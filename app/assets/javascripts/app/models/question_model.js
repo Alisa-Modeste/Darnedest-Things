@@ -1,6 +1,7 @@
 // TODO: Might have to make a custom type for text
 
 App.Question = Ember.Model.extend({
+	id: Ember.attr("number"),
   title: Ember.attr("string"),
   body: Ember.attr("string"),
   user: Ember.belongsTo('App.User', {key: 'user_id', embedded: false }),

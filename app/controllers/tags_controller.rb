@@ -10,4 +10,18 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     respond_with(@tag)
   end
+  
+  def create
+	tag = Tag.new(params[:tag])
+	
+	if tag.save
+      #redirect_to question_url(question.id)
+      respond_with(tag)
+
+    else
+      flash.now[:notice] = tag.errors.full_messages
+     # render :new
+     respond_with false
+    end
+  end
 end

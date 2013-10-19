@@ -55,8 +55,14 @@
 
 </div>
   </script>
+ <!--   <script type="text/x-handlebars" data-template-name="question">
+  {{outlet}}
+   </section>
+  </script>
+  -->
   <!-- // TODO: Set it to retrieveCurrentUser -->
-  <script type="text/x-handlebars" data-template-name="question_new">
+  
+  <script type="text/x-handlebars" data-template-name="questions/new">
 
   <h1>New question</h1>
   Title
@@ -70,7 +76,7 @@
   <button {{action save}}>Save</button>
   </script>
 
-  <script type="text/x-handlebars" data-template-name="question">
+  <script type="text/x-handlebars" data-template-name="questions/show">
   <h1>One question</h1>
 
   <section id="question">
@@ -88,13 +94,24 @@
    </section>
   </script>
 
+ 
+  
   <script type="text/x-handlebars" data-template-name="questions">
+  <h1>Questions Header</h1>
+
+  {{outlet}}
+
+
+  </script>
+  
+   <script type="text/x-handlebars" data-template-name="questions/index">
   <h1>Questions Index</h1>
 
   {{#each item in model}}
-    <li>{{#linkTo "question" item.id}} {{item}} {{/linkTo}}</li>
+    <li>{{#linkTo "questions.question" item.id}} {{item}} {{/linkTo}}</li>
   {{/each}}
 
+  //{outlet}}
 
   </script>
 

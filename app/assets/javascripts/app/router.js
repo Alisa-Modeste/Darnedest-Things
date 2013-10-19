@@ -4,10 +4,16 @@ App.Router.map(function(){
 
 
   //Indexes and Shows
-  this.resource("questions", {path: "/questions"});
+  // this.resource("questions", {path: "/questions"});
 
-	this.resource("question_new", {path: "/questions/new"});
-	this.resource("question", {path: "/questions/:question_id"});
+	// this.resource("question_new", {path: "/questions/new"});
+	// this.resource("question", {path: "/questions/:question_id"});
+	
+	this.resource("questions", {path: "/questions"}, function(){
+		this.route('new', {path: "/questions/new"});
+		this.route('question', {path: "/questions/:question_id"});
+
+	});
 
 	this.resource("users");
 	this.resource("user", {path: "/users/:user_id"});

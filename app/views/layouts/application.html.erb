@@ -76,7 +76,7 @@
   <button {{action save}}>Save</button>
   </script>
 
-  <script type="text/x-handlebars" data-template-name="questions/show">
+  <script type="text/x-handlebars" data-template-name="questions/question">
   <h1>One question</h1>
 
   <section id="question">
@@ -111,8 +111,6 @@
     <li>{{#linkTo "questions.question" item.id}} {{item}} {{/linkTo}}</li>
   {{/each}}
 
-  //{outlet}}
-
   </script>
 
   <script type="text/x-handlebars" data-template-name="index">
@@ -127,15 +125,22 @@
   <!-- Users -->
 
   <script type="text/x-handlebars" data-template-name="users">
+  <h1>Users Header</h1>
+
+  {{outlet}}
+  
+  </script>
+  
+  <script type="text/x-handlebars" data-template-name="users/index">
   <h1>Users Index</h1>
 
   {{#each item in model}}
-    <li>{{#linkTo "user" item.id}} {{item}} {{/linkTo}}</li>
+    <li>{{#linkTo "users.user" item.id}} {{item}} {{/linkTo}}</li>
   {{/each}}
 
   </script>
 
-  <script type="text/x-handlebars" data-template-name="user">
+  <script type="text/x-handlebars" data-template-name="users/user">
   <h1>One user</h1>
   {{name}}
   </script>

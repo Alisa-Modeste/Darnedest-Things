@@ -14,9 +14,15 @@ App.Router.map(function(){
 		this.route('question', {path: "/questions/:question_id"});
 
 	});
+	
+	this.resource("users", {path: "/users"}, function(){
+		this.route('new', {path: "/users/new"});
+		this.route('user', {path: "/users/:user_id"});
 
-	this.resource("users");
-	this.resource("user", {path: "/users/:user_id"});
+	});
+
+	// this.resource("users");
+	// this.resource("user", {path: "/users/:user_id"});
 
 	this.resource("tags");
 	this.resource("tag", {path: "/tags/:tag_id"});

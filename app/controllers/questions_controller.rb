@@ -2,7 +2,7 @@
 
 class QuestionsController < ApplicationController
   respond_to :json
-  before_filter :ensure_logged_in, only: [:new, :create]
+  #before_filter :ensure_logged_in, only: [:new, :create]
 
   def show
     @question = Question.eager_load([:tags, :answers]).find(params[:id])
@@ -20,11 +20,14 @@ class QuestionsController < ApplicationController
 
   def create
     question = Question.new(params[:question])
+    #question = Question.new({title: params[:title], body: params[:body]})
     question.user_id = self.current_user.id
 
-    tags = params[:question_tags]
-    tags = format_tags(tags)
+	p "question is",question
+   tags = params[:question_tags]
+   # tags = format_tags(tags) unless tags.nil?
 
+   tags = (tags.nil?) ? [] : format_tags(tags)
     found_tags = {}
     Tag.where(name: tags).select([:id, :name]).each{ |x| found_tags[ "_#{x.id}" ] = x.name }
 
@@ -43,13 +46,16 @@ class QuestionsController < ApplicationController
     question.tag_ids = tag_ids
 
     if question.save
+	p "question had no errors", question
       #redirect_to question_url(question.id)
-      respond_with question
+      respond_with(question)
       # TODO: Json add tags and user
     else
+	p "the errors",question.errors.full_messages
       flash.now[:notice] = question.errors.full_messages
      # render :new
-     respond_with false
+     #respond_with false
+     respond_with question.errors.full_messages
     end
 
   end

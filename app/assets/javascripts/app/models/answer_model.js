@@ -1,6 +1,7 @@
 // TODO: Might have to make a custom type for text
 
 App.Answer = Ember.Model.extend({
+id: Ember.attr("number"),
  // question_id: Ember.attr("number"),
   response: Ember.attr("string"),
   question: Ember.belongsTo('App.Question', {key: 'question_id', embedded: false }),

@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController
-
+	respond_to :json
+	
   def new
     render :new
   end
 
   def create
-    user = User.find_by_credentials(params[:user][:email], params[:user][:password])
+    user = User.find_by_credentials(params[:email], params[:password])
 
     if user
       self.current_user = user

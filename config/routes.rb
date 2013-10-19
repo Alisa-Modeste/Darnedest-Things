@@ -25,7 +25,7 @@ match "/users/current", action: 'getSelf', via: [:get], controller: "users"
   resource :search, only: [:create]
   resources :searches, only: [:index]
 
-  resources :tags, only: [:show, :index]
+  resources :tags, only: [:show, :index, :create]
 
 
 end

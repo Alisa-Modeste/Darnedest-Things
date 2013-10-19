@@ -1,8 +1,8 @@
-App.Session = Ep.Model.extend({
-  email: Ep.attr("string"),
-  password: Ep.attr("string")
+App.Session = Ember.Model.extend({
+  email: Ember.attr("string"),
+  password: Ember.attr("string")
 });
 
 App.Session.url = "/session";
-App.Session.adapter = Ep.RestAdapter.create();
+App.Session.adapter = Ember.RESTAdapter.create();
 // App.Tag.collectionKey = "tags"

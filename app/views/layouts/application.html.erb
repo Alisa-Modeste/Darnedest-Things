@@ -66,12 +66,14 @@
   <h1>New question</h1>
   Title
   {{input type="text" value=title}}
-  {{input type="hidden" value=1  }}
+  {{input type="text" value=user  }}
   <br>
   Body
    <br>
   {{textarea cols="100" rows="20" value=body}}
   <br>
+  
+  {{input type="text" value=tags class="tagItMe"}}
   <button {{action save}}>Save</button>
   </script>
 
@@ -178,7 +180,27 @@
 
 
 
+<!-- Session Management -->
 
+<script type="text/x-handlebars" data-template-name="session">
+
+  <h1>Session Management</h1>
+  {{outlet}}
+  </script>
+
+<script type="text/x-handlebars" data-template-name="session/new">
+
+  <h1>Log In</h1>
+  Email
+  {{input type="text" value=email}}
+ 
+  <br>
+  Password
+  {{input type="password" value=password}}
+  <br>
+  
+  <button {{action save}}>Save</button>
+  </script>
 
 
 

@@ -2,7 +2,7 @@
 
 class QuestionsController < ApplicationController
   respond_to :json
-  #before_filter :ensure_logged_in, only: [:new, :create]
+  before_filter :ensure_logged_in, only: [:new, :create]
 
   def show
     @question = Question.eager_load([:tags, :answers]).find(params[:id])
@@ -24,7 +24,7 @@ class QuestionsController < ApplicationController
     question.user_id = self.current_user.id
 
 	p "question is",question
-   tags = params[:question_tags]
+   tags = params[:listOfTags]
    # tags = format_tags(tags) unless tags.nil?
 
    tags = (tags.nil?) ? [] : format_tags(tags)

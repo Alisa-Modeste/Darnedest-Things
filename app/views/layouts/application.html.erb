@@ -1,5 +1,7 @@
 <% # TODO: If you're working with precompiled templates, you don't need to ship the compiler with your deployed application. Instead, you can use the smaller "runtime" build. http://handlebarsjs.com/precompilation.html (handlebars, ember)
   # TODO: Login, logout buttons, and ask a question
+  
+  #TODO: Change view on form submit
 
 %>
 
@@ -66,7 +68,6 @@
   <h1>New question</h1>
   Title
   {{input type="text" value=title}}
-  {{input type="text" value=user  }}
   <br>
   Body
    <br>
@@ -144,6 +145,23 @@
   <script type="text/x-handlebars" data-template-name="users/user">
   <h1>One user</h1>
   {{name}}
+  </script>
+  
+  <script type="text/x-handlebars" data-template-name="users/new">
+  <h1>Sign Up</h1>
+  Email
+  {{input type="text" value=email}}
+ 
+  
+   Name (optional)
+   {{input type="text" value=name}}
+  
+  <br>
+  Password
+  {{input type="password" value=password}}
+  <br>
+    
+  <button {{action save}}>Save</button>
   </script>
 
   <!-- Tags -->

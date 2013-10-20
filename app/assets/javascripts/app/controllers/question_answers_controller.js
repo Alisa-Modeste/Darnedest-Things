@@ -14,9 +14,16 @@ App.QuestionsQuestionController = Ember.ObjectController.extend({
 		newAnswer.save();
 	},
 	
-	delete: function(){
-		var unWantedQuestion = this.get('model');
+	deleteQuestion: function(){
+		var unWantedQuestion = this.get('model.id');
 		console.log('q', unWantedQuestion)
-		console.log('q', unWantedQuestion.get('id'))
+		//console.log('q', unWantedQuestion.get('id'))
+	},
+	
+	deleteAnswer: function(answer){
+		
+		var unWantedAnswer = answer.get('id')
+		console.log('a', unWantedAnswer)
+		//console.log('q', unWantedQuestion.get('id'))
 	}
 })

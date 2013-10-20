@@ -26,9 +26,8 @@
   			<li>{{#linkTo "tags"}}Tags{{/linkTo}}</li>
   			<li>{{#linkTo "questions"}}Questions{{/linkTo}}</li>
   			<li>{{#linkTo "users"}}People{{/linkTo}}</li>
-  			<!--<li>{#linkTo "users.current"}}Your Profile{/linkTo}}</li>-->
-			{{#linkTo "users.current"}}Your Profile{{/linkTo}}
-  			<li>{{#linkTo "questions.new"}}Ask a Question{{/linkTo}}</li>
+  			<li>Your Profile</li>
+  			<li>Ask a Question</li>
   		</ul>
   	</nav>
   </header>
@@ -74,7 +73,7 @@
 	  <br>
 	  {{body}}
 	  <br>
-	  <button {{action delete}}>Delete Question</button>
+	  <button {{action deleteQuestion}}>Delete Question</button>
 	  </section>
 
 	   <section id="answers">
@@ -82,7 +81,7 @@
 			   <article>
 				 {{answer.response}}
 				 <br>
-				 <button {{action delete content.answers}}>Delete Question</button>
+				 <button {{action deleteAnswer answer}}>Delete Answer</button>
 			   </article>
 		   {{/each}}
 	   </section>
@@ -153,8 +152,13 @@
   </script>
   
   <script type="text/x-handlebars" data-template-name="users/current">
-  <h1>Cur</h1>
+  <h1>Current</h1>
   {{name}}
+  {{content}}
+  
+  {{#each h in model}}
+  {{h.name}}
+  {{/each}}
   </script>
   
   <script type="text/x-handlebars" data-template-name="users/new">

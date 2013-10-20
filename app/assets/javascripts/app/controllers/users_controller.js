@@ -15,5 +15,10 @@ App.UsersNewController = Ember.ObjectController.extend({
 	
     newUser.save();
 	
+	//To reset the forms for now
+		this.set('email', null);
+		this.set('password', null);
+		this.set('name', null);
+	
 	}
 })

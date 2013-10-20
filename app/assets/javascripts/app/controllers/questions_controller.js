@@ -4,7 +4,6 @@ App.QuestionsNewController = Ember.ObjectController.extend({
 	body:null,
 	title:null,
 	tags:null,
-	that:this,
 
   save: function(){
     var newQuestion = App.Question.create({
@@ -22,6 +21,11 @@ App.QuestionsNewController = Ember.ObjectController.extend({
 		App.Router.router.transitionTo("questions.question", question.get('id'))
 
 	});
+		//TODO
+		//To reset the forms for now
+		this.set('title', null);
+		this.set('body', null);
+		this.set('tags', null);
 
 	}
 })

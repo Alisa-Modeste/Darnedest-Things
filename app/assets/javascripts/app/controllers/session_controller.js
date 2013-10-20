@@ -14,6 +14,9 @@ App.SessionNewController = Ember.ObjectController.extend({
     newSession.save().then(function(){
 		App.Router.router.transitionTo("questions.index")
 
+		//To reset the forms for now
+		this.set('email', null);
+		this.set('password', null);
 	});
 
 	

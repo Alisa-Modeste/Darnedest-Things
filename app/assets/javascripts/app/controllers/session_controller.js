@@ -11,7 +11,11 @@ App.SessionNewController = Ember.ObjectController.extend({
 	  
     })
 	
-    newSession.save();
+    newSession.save().then(function(){
+		App.Router.router.transitionTo("questions.index")
+
+	});
+
 	
 	}
 })

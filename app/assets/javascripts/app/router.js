@@ -8,6 +8,7 @@ App.Router.map(function(){
 	
 	this.resource("users", {path: "/users"}, function(){
 		this.route('new', {path: "/new"});
+		this.route('current', {path: "/current"});
 		this.route('user', {path: "/:user_id"});
 
 	});

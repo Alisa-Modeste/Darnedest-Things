@@ -7,6 +7,7 @@ WisdomCrowd::Application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
+  match "/users/current", action: 'getSelf', via: [:get], controller: "users"
   resources :users do
     resources :answers, :questions, only: :index
   end
@@ -15,7 +16,7 @@ WisdomCrowd::Application.routes.draw do
 #     resource :user, only: :show
 #   end
 
-match "/users/current", action: 'getSelf', via: [:get], controller: "users"
+
 
   resources :questions do
     resources :answers, only: [:create]

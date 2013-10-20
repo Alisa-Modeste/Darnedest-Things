@@ -4,6 +4,13 @@ App.UsersIndexRoute = Ember.Route.extend({
   }
 });
 
+// App.UsersSelfRoute = Ember.Route.extend({
+  // model: function(){
+  // console.log("in self route")
+     // return App.User.find();
+  // }
+// });
+
 // App.UserRoute = Ember.Route.extend({
 //   model: function(params){
 //

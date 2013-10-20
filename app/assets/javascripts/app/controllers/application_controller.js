@@ -8,5 +8,18 @@ App.ApplicationController = Ember.Controller.extend({
 	else{
 		return false
 	}
-  }.observes('currentPath')
+  }.observes('currentPath'),
+  
+  logout: function(){
+	 // Ember.$.AJAX('/session', function(data) {
+				// App.store.load(App.User, data);
+				// var currentUser = App.store.find(data.id);
+				// controller.set('content', currentUser);
+			// });
+			
+		Ember.$.ajax({
+			url: '/session',
+			type: "DELETE"
+	  });
+	  }
 });

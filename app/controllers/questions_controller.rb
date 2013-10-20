@@ -65,6 +65,11 @@ class QuestionsController < ApplicationController
     respond_with(@questions)
   end
 
-
+	def destroy
+		question = Question.find(params[:id])
+		question.destroy
+		
+		respond_with :no_content
+	end
 
 end

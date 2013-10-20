@@ -7,7 +7,6 @@ App.QuestionsQuestionController = Ember.ObjectController.extend({
 		var newAnswer = App.Answer.create({
 		
 			response: this.get('response'),
-
 			question_id: this.get('model').get('id')
 		})
 
@@ -15,15 +14,15 @@ App.QuestionsQuestionController = Ember.ObjectController.extend({
 	},
 	
 	deleteQuestion: function(){
-		var unWantedQuestion = this.get('model.id');
-		console.log('q', unWantedQuestion)
-		//console.log('q', unWantedQuestion.get('id'))
+		var unWantedQuestion = this.get('model');
+		unWantedQuestion.deleteRecord()
+		unWantedQuestion.save()
+		
 	},
 	
-	deleteAnswer: function(answer){
-		
-		var unWantedAnswer = answer.get('id')
-		console.log('a', unWantedAnswer)
-		//console.log('q', unWantedQuestion.get('id'))
+	deleteAnswer: function(unWantedAnswer){
+
+		unWantedAnswer.deleteRecord()
+		unWantedAnswer.save()
 	}
 })

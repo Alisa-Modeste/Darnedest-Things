@@ -28,4 +28,11 @@ class AnswersController < ApplicationController
     @answers = Answer.page(params[:page]).per(30)
     respond_with(@answers)
   end
+  
+  def destroy
+	answer = Answer.find(params[:id])
+	answer.destroy
+		
+	respond_with :no_content
+  end
 end

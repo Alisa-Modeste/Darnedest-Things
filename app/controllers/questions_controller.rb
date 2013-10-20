@@ -19,11 +19,11 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new(params[:question])
+    @question = Question.new(params[:question])
     #question = Question.new({title: params[:title], body: params[:body]})
-    question.user_id = self.current_user.id
+    @question.user_id = self.current_user.id
 
-	p "question is",question
+	p "question is",@question
    tags = params[:listOfTags]
    # tags = format_tags(tags) unless tags.nil?
 
@@ -43,19 +43,19 @@ class QuestionsController < ApplicationController
       end
     end
 
-    question.tag_ids = tag_ids
+    @question.tag_ids = tag_ids
 
-    if question.save
-	p "question had no errors", question
-      #redirect_to question_url(question.id)
-      respond_with(question)
+    if @question.save
+	p "@question had no errors", @question
+      #redirect_to @question_url(@question.id)
+      respond_with(@question)
       # TODO: Json add tags and user
     else
-	p "the errors",question.errors.full_messages
-      flash.now[:notice] = question.errors.full_messages
+	p "the errors",@question.errors.full_messages
+      flash.now[:notice] = @question.errors.full_messages
      # render :new
      #respond_with false
-     respond_with question.errors.full_messages
+     respond_with @question.errors.full_messages
     end
 
   end

@@ -20,6 +20,8 @@ App.ApplicationController = Ember.Controller.extend({
 		Ember.$.ajax({
 			url: '/session',
 			type: "DELETE"
-	  });
+		});
+		
+		this.transitionTo('index');
 	  }
 });

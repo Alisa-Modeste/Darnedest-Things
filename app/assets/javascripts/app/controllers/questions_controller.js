@@ -4,6 +4,7 @@ App.QuestionsNewController = Ember.ObjectController.extend({
 	body:null,
 	title:null,
 	tags:null,
+	that:this,
 
   save: function(){
     var newQuestion = App.Question.create({
@@ -12,9 +13,15 @@ App.QuestionsNewController = Ember.ObjectController.extend({
 		body: this.get('body'),
 
 		listOfTags: this.get('tags')
-    })
+    });
 
-    newQuestion.save();
+    newQuestion.save().then(function(question){
+	console.log("in then",this)
+		//this.transitionToRoute("questions.question", question.get('id'))
+		//App.Router.router.transitionTo("questions.index")
+		App.Router.router.transitionTo("questions.question", question.get('id'))
+
+	});
 
 	}
 })

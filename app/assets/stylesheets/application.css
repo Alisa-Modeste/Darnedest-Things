@@ -91,6 +91,7 @@ img {
 }*/
 
 #content {
+  margin-top:50px;
   margin-left: 350px;
 }
 
@@ -112,6 +113,8 @@ nav {
 	float: left;
 	width: 300px;
 	/*padding: 13px*/
+/*  height:100%;*/
+  overflow:auto
 }
 
 .clf section {

@@ -63,7 +63,7 @@ img {
      border-top: 7px solid #6495ED;
      border-bottom: 7px solid #6495ED;
   padding: 20px;
-  margin: auto 450px;
+  margin: auto;
 
   box-shadow: 10px 10px 5px #888, 0 0 1px gray;
   position:relative;
@@ -74,7 +74,7 @@ img {
 	display: block;
 	width: 700px;
   padding: 20px;
-  margin: 30px 400px;
+  margin: 30px auto;
   border-radius: 14px;
   position:relative;
   z-index: 1;

@@ -13,9 +13,6 @@ gem "pg_search"
 gem 'kaminari'
 gem "squeel"
 
-gem 'ember-rails'
-gem 'ember-source'
-
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Gems used only for assets and not required

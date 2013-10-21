@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-	respond_to :json
+	respond_to :json, :html
 	
   def new
     render :new
@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
       respond_with user
     else
       flash.now[:notice] = "Invalid credentials"
-      render :new
+      #render :new
+      redirect_to new_session_url
     end
   end
 

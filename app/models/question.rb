@@ -60,7 +60,7 @@ class Question < ActiveRecord::Base
          .group{"questions.id"}.having{count("questions.id") == searched_tags.length }
 
       else
-        Question.joins(:tags).where{tags.name.eq_any searched_tags}.search_question(query)
+        Question.joins(:tags).where{tags.name.in searched_tags}.search_question(query)
       end
     else
 

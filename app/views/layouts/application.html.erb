@@ -10,45 +10,51 @@
 </head>
 <body>
 
-<header>
-<img src='../images/1381563908_gossip_birds.png'>
-</header>
+<header id='image'>
+<img src='images/1381563908_gossip_birds.png'>
+<h1>Darnedest Things</h1>
 
-<header  class='clf'>
-	<section>
-	<h2><em>People</em> say the darn<em>e</em>dest things!</h2>
-	</section>
+<div class='clf'></div>
+<h2><em>People</em> say the darn<em>e</em>dest things!</h2>
+
+<% stored_current_user = current_user %>
 	<nav>
 		<ul class='clf'>
 			<li> <a href="<%= tags_url %>">Tags</a></li>
 			<li> <a href="<%= questions_url %>">Questions</a></li>
 			<li> <a href="<%= users_url %>">People</a></li>
-			<%= "<li> <a href=' #{user_url(current_user)} '>Your Profile</a></li>".html_safe if current_user %>
+			<%= "<li> <a href=' #{user_url(stored_current_user)} '>Your Profile</a></li>".html_safe if stored_current_user %>
+			<li><a href="<%= new_session_url %>">Ask a Question</a></li>
 		</ul>
 	</nav>
 </header>
-<aside id='sidebar'>
-	People you are following
-	Questions you are following
 
-</aside>
 
-  <div id="header">
-    <%= flash[:notice] %>
-    <%= button_to "Sign Out", session_url, method: "delete" if current_user %>
 
-    <!-- <form method="post" action="<%= %>">
-      <button>Ask a question</button>
-    </form> -->
-
-      <% unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
-      <%= button_to "Ask a question", new_question_url, method: "get" %>
-      <% end %>
-  </div>
 
 
 
   <div id="content">
+    <div id="header">
+      <%= flash[:notice] %>
+
+      <% if stored_current_user %>
+        <%= button_to "Sign Out", session_url, method: "delete"  %>
+      <% else %>
+        <%= button_to "Sign In", new_session_url , method: "get" %>
+      <% end %>
+
+      <!-- <form method="post" action="<%= %>">
+        <button>Ask a question</button>
+      </form> -->
+
+        <div id="new-question" class="clf">
+          <% unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
+            <%= link_to "Ask a question", new_question_url %>
+          <% end %>
+        </div>
+    </div>
+
     <%= yield %>
   </div>
 

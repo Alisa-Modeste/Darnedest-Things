@@ -110,23 +110,31 @@ img {
 
 nav {
 	float: left;
-	width: 200px;
+	width: 300px;
 	/*padding: 13px*/
 }
 
 .clf section {
 	float: left;
-	width: 400px
+	width: 300px
 }
 
 nav li {
 	display: block;
-
-	padding: 17px;
+  margin-left: 15px;
+	padding: 24px;
+  padding-right: 24px;
+  padding-left: 14px;
+  text-align:justify;
 }
 
 nav li:hover {
 	background-color: red;
+
+}
+
+nav li a:hover{
+  color: black;
 }
 
 #image {
@@ -139,6 +147,18 @@ nav li:hover {
 	position: fixed;
 	width: 200px;
 	left: 300px;
+
+}
+#new-question {
+	display: block;
+  background: red;
+	padding: 17px;
+  float:right;
+  margin-right: 30px;
+}
+
+#new-question a {
+  color: black;
 }
 
 

@@ -15,15 +15,9 @@
 //= require jquery-ui-1.10.3.custom
 //= require jquery.tagcloud
 //= require tag-it
-//= require handlebars
-//= require ember
-//= require ember-data
 //= require_self
 //= require darnedest_things
 //= require_tree .
 //
 //
 //= require_tree ../../../vendor/assets/javascripts
-// for more details see: http://emberjs.com/guides/application/
-window.DT = Ember.Application.create();
-//DT.ApplicationAdapter = DS.FixtureAdapter.extend();

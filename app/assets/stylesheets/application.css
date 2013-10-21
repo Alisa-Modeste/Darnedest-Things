@@ -15,30 +15,6 @@
  */
 
 
-/*#header {
-  position: fixed;
-  top: 0;
-}
-
-#content {
-  margin-top: 100px;
-}*/
-
-#content {
-  float: left;
-  width: 500px;
-}
-
-#page-count {
-  float: left;
-  width: 200px;
-}
-
-.clf:after {
-  content: "";
-  clear: both;
-  display: table;
-}
 
 body, div, section, aside, article,img, header, ul, li, a {
 	margin: 0;
@@ -49,6 +25,26 @@ body, div, section, aside, article,img, header, ul, li, a {
 	text-decoration: none;
 }
 
+#question-stream {
+  float:left;
+  width: 600px;
+  margin: 0 100px;
+  position: relative
+}
+
+#question-stream li {
+	display: block;
+
+	border-radius: 14px;
+     border-top: 7px solid #6495ED;
+     border-bottom: 7px solid #6495ED;
+  padding: 20px;
+  margin: 20px 10px;
+
+  box-shadow: 10px 10px 5px #888, 0 0 1px gray;
+  position:relative;
+  z-index: 1;
+}
 
 aside {
 	float:left;
@@ -60,10 +56,61 @@ img {
 	height: 158x;
 }
 
+#question {
+	display: block;
+	width: 700px;
+	border-radius: 14px;
+     border-top: 7px solid #6495ED;
+     border-bottom: 7px solid #6495ED;
+  padding: 20px;
+  margin: auto 450px;
+
+  box-shadow: 10px 10px 5px #888, 0 0 1px gray;
+  position:relative;
+  z-index: 1;
+}
+
+#answers article{
+	display: block;
+	width: 700px;
+  padding: 20px;
+  margin: 30px 400px;
+  border-radius: 14px;
+  position:relative;
+  z-index: 1;
+  background-color: #cbd4e1;
+}
+
+/*#answers article:nth-child(even){
+  border-top: 7px solid crimson;
+
+}
+
+#answers article:nth-child(odd){
+  border-top: 7px solid green;
+}*/
+
+#content {
+  margin-left: 300px;
+}
+
+#answers article:before{
+	height: 200px;
+	width: 400px;
+	display: block;
+	content: 'hi';
+	background: url(1381565212_bird_sign_sparkles.png) no-repeat center top;
+}
+#answers p {
+	margin: 30px auto;
+	width: 700px
+
+}
+
 
 nav {
 	float: left;
-	width: 600px;
+	width: 200px;
 	/*padding: 13px*/
 }
 
@@ -74,19 +121,30 @@ nav {
 
 nav li {
 	display: block;
-	float: left;
 
-}
-
-nav li a {
-  padding: 17px;
+	padding: 17px;
 }
 
 nav li:hover {
 	background-color: red;
-  font-weight: bolder;
 }
 
+#image {
+	position: fixed;
+	width: 300px;
+	left: 0;
+}
+
+#nav {
+	position: fixed;
+	width: 200px;
+	left: 300px;
+}
+
+
+header.clf section {
+
+}
 
 header.clf {
 	border-top: 1px solid gray;
@@ -111,12 +169,23 @@ header h2 em{
 }
 
 
-a {
-	color: #a60000;
-  display: block;
+.clf {
+	clear: both;
+	display: table;
 }
 
-a:not(nav a):hover {
+a {
+	color: #a60000
+}
+
+a:hover {
 	text-decoration:underline;
 }
 
+#sidebar {
+	border: 1px solid black
+}
+body {
+/*  background-color: #99ddff;*/
+  background-color: #d8dfe8;
+}

@@ -133,6 +133,7 @@ nav li {
 
 nav li:hover {
 	background-color: red;
+  border-radius: 10px;
 
 }
 
@@ -158,6 +159,7 @@ nav li a:hover{
 	padding: 17px;
   float:right;
   margin-right: 30px;
+  border-radius: 10px;
 }
 
 #new-question a {

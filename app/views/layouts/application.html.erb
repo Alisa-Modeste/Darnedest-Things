@@ -24,7 +24,7 @@
 			<li> <a href="<%= questions_url %>">Questions</a></li>
 			<li> <a href="<%= users_url %>">People</a></li>
 			<%= "<li> <a href=' #{user_url(stored_current_user)} '>Your Profile</a></li>".html_safe if stored_current_user %>
-			<li><a href="<%= new_session_url %>">Ask a Question</a></li>
+			<!-- <li><a href="<%#= new_session_url %>">Ask a Question</a></li> -->
 		</ul>
 	</nav>
 </header>
@@ -48,11 +48,13 @@
         <button>Ask a question</button>
       </form> -->
 
+
+      <% unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
         <div id="new-question" class="clf">
-          <% unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
-            <%= link_to "Ask a question", new_question_url %>
-          <% end %>
+        <%= link_to "Ask a question", new_question_url %>
         </div>
+      <% end %>
+
     </div>
 
     <%= yield %>

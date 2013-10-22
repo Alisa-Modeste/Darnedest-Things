@@ -31,7 +31,11 @@
 
 
 
-
+  <% unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
+    <div id="new-question" class="clf">
+    <%= link_to "Ask a question", new_question_url %>
+    </div>
+  <% end %>
 
 
   <div id="content">
@@ -49,11 +53,7 @@
       </form> -->
 
 
-      <% unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
-        <div id="new-question" class="clf">
-        <%= link_to "Ask a question", new_question_url %>
-        </div>
-      <% end %>
+
 
     </div>
 

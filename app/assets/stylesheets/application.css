@@ -175,6 +175,7 @@ header {
 }
 header:after{
   border-right: 1px solid gray;
+/*  box-shadow: 10px 10px 5px #888, 0 0 1px gray, ;*/
   height: 100%;
   content: "";
   position: absolute;
@@ -220,7 +221,12 @@ a:hover {
 #sidebar {
 	border: 1px solid black
 }
-body {
-/*  background-color: #99ddff;*/
-  background-color: #d8dfe8;
+html {
+/**/
+  background-image:url("../images/gradient01.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
 }

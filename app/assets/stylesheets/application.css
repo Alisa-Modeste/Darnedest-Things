@@ -170,6 +170,16 @@ nav li a:hover{
 
 header {
   margin-left: 15px;
+  position: relative;
+
+}
+header:after{
+  border-right: 1px solid gray;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
 }
 
 /*header.clf {

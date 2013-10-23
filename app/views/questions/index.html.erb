@@ -1,5 +1,5 @@
   <%= stylesheet_link_tag    "questions", :media => "all" %>
-  
+
   <aside id="page-count">
   Page X of Y
 </aside>
@@ -8,8 +8,13 @@
 
 <section id="question-stream">
 <ul>
+  <% n = 15 %>
   <% @questions.each do |question| %>
-    <li><%= question.title %></li>
+    <li>
+      <strong><%= question.title %></strong>
+      <br>
+      <%= question.body.split(/\s+/, n+1)[0...n].join(' ') %>
+    </li>
   <% end %>
 </ul>
 

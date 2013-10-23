@@ -1,7 +1,7 @@
-#question-stream li {
-	display: block;
+/*#question-stream li {
+  display: block;
 
-	border-radius: 14px;
+  border-radius: 14px;
      border-top: 7px solid #6495ED;
      border-bottom: 7px solid #6495ED;
   padding: 20px;
@@ -11,11 +11,11 @@
   position:relative;
   z-index: 1;
 }
+*/
 
-
-#question-stream {
-	float:left;
-	width: 600px;
-	margin: 0 100px;
-	position: relative
-}
+/*#question-stream {
+  float:left;
+  width: 600px;
+  margin: 0 100px;
+  position: relative
+}*/

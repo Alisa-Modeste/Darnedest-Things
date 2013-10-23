@@ -23,12 +23,13 @@ body, div, section, aside, article,img, header, ul, li, a {
 	font-family: "Lucida Grande", Arial;
 	list-style: none;
 	text-decoration: none;
+  font-size: 95%;
 }
 
 #question-stream {
   float:left;
   width: 600px;
-  margin: 0 100px;
+  margin: 0 30px;
   position: relative
 }
 
@@ -36,10 +37,10 @@ body, div, section, aside, article,img, header, ul, li, a {
 	display: block;
 
 	border-radius: 14px;
-     border-top: 7px solid #6495ED;
-     border-bottom: 7px solid #6495ED;
-  padding: 20px;
-  margin: 20px 10px;
+/*     border-top: 2px solid #6495ED;*/
+/*     border-bottom: 1px solid #6495ED;*/
+  padding: 10px;
+  margin: 20px 0px;
 
   box-shadow: 10px 10px 5px #888, 0 0 1px gray;
   position:relative;

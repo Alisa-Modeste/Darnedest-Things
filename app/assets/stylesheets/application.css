@@ -97,6 +97,7 @@ img {
   margin-left: 350px;
 }
 
+
 #answers article:before{
 	height: 200px;
 	width: 400px;
@@ -147,8 +148,9 @@ nav li a:hover{
 
   width: 30px;
   height: 40px;
-  float:left;
+  float:right;
   margin: 20px;
+  margin-right: 80px;
 
 }
 
@@ -256,4 +258,10 @@ html {
 
 body {
 /*  background: #F0F8FF;*/
+}
+
+/* Users */
+
+#user-list li {
+  margin-bottom: 30px;
 }

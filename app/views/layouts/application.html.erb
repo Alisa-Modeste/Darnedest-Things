@@ -32,23 +32,25 @@
 
 
   <% unless [new_question_url, new_session_url, new_user_url].include? "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %>
-    <div id="new-question" class="clf">
+    <div id="new-question">
     <%= link_to "Ask a question", new_question_url %>
     </div>
   <% end %>
 
 
+  <div id="toggle-session">
+    <% if stored_current_user %>
+      <%= button_to "Sign Out", session_url, method: "delete"  %>
+    <% else %>
+      <%= button_to "Sign In", new_session_url , method: "get" %>
+    <% end %>
+  </div>
+
   <div id="content">
     <div id="header" class="clf">
       <%= flash[:notice] %>
 
-      <div id="toggle-session">
-        <% if stored_current_user %>
-          <%= button_to "Sign Out", session_url, method: "delete"  %>
-        <% else %>
-          <%= button_to "Sign In", new_session_url , method: "get" %>
-        <% end %>
-      </div>
+
 
       <!-- <form method="post" action="<%= %>">
         <button>Ask a question</button>

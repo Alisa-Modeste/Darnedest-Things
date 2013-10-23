@@ -1,7 +1,18 @@
 <%#= @questions %>
 
-<ul>
+<ul id="user-list">
   <% @users.each do |user| %>
-    <li><a href="<%= user_url(user.id) %>"><%= user.name %></a></li>
+    <li>
+      User: <a href="<%= user_url(user.id) %>"><%= user.name %></a>
+      <br>
+      <% last_question = user.questions[-1] %>
+      Last question:
+      <% if last_question %>
+        <a href=" <%= question_url( last_question.id ) %> ">  <%= last_question.title %> </a>
+      <% else %>
+        They have no questions yet
+      <% end %>
+
+    </li>
   <% end %>
 </ul>

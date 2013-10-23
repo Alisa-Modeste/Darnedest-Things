@@ -11,11 +11,11 @@
 <body>
 
 <header id='image'>
-<img src='../images/1381563908_gossip_birds.png'>
-<h1>Darnedest Things</h1>
+<img src='../images/logo02.png' alt="Darnedest Things <em>People</em> say the darn<em>e</em>dest things!">
+<h1></h1>
 
 <div class='clf'></div>
-<h2><em>People</em> say the darn<em>e</em>dest things!</h2>
+<h2></h2>
 
 <% stored_current_user = current_user %>
 	<nav>
@@ -39,14 +39,16 @@
 
 
   <div id="content">
-    <div id="header">
+    <div id="header" class="clf">
       <%= flash[:notice] %>
 
-      <% if stored_current_user %>
-        <%= button_to "Sign Out", session_url, method: "delete"  %>
-      <% else %>
-        <%= button_to "Sign In", new_session_url , method: "get" %>
-      <% end %>
+      <div id="toggle-session">
+        <% if stored_current_user %>
+          <%= button_to "Sign Out", session_url, method: "delete"  %>
+        <% else %>
+          <%= button_to "Sign In", new_session_url , method: "get" %>
+        <% end %>
+      </div>
 
       <!-- <form method="post" action="<%= %>">
         <button>Ask a question</button>

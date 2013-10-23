@@ -127,10 +127,10 @@ nav {
 nav li {
 	display: block;
   margin-left: 5px;
-	padding: 24px;
-  padding-right: 24px;
-  padding-left: 24px;
-  text-align:justify;
+	padding: 14px;
+/*  padding-right: 14px;
+  padding-left: 14px;*/
+  text-align:center;
 }
 
 nav li:hover {
@@ -141,6 +141,23 @@ nav li:hover {
 
 nav li a:hover{
   color: black;
+}
+
+#toggle-session {
+
+  width: 30px;
+  height: 40px;
+  float:left;
+  margin: 20px;
+
+}
+
+#toggle-session input {
+  padding: 10px;
+  margin: 0;
+  border: 0;
+  font-size: 95%;
+
 }
 
 #image {

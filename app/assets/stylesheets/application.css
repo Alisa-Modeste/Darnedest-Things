@@ -45,6 +45,7 @@ body, div, section, aside, article,img, header, ul, li, a {
   box-shadow: 10px 10px 5px #888, 0 0 1px gray;
   position:relative;
   z-index: 1;
+  background-color: #FFF8E0;
 }
 
 aside {
@@ -115,7 +116,7 @@ nav {
 	width: 300px;
 	/*padding: 13px*/
 /*  height:100%;*/
-  overflow:auto
+
 }
 
 .clf section {
@@ -146,12 +147,16 @@ nav li a:hover{
 	position: fixed;
 	width: 300px;
 	left: 0;
+  /*  background-color: #99ddff;*/
+/*    background-color: #d8dfe8;*/
 }
 
 #nav {
 	position: fixed;
 	width: 200px;
 /*  left: 300px;*/
+  /*  background-color: #99ddff;*/
+    background-color: #d8dfe8;
 
 }
 #new-question {
@@ -230,4 +235,8 @@ html {
     -o-background-size: cover;
     background-size: cover;
 
+}
+
+body {
+/*  background: #F0F8FF;*/
 }

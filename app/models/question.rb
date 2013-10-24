@@ -82,6 +82,9 @@ class Question < ActiveRecord::Base
       hash.merge!("user_id" => self.user_id)
       hash.merge!("answer_ids" => self.answer_ids)
       hash.merge!("tag_ids" => self.tag_ids)
+
+      # editable = self.user == self.current_user ? {"can_edit" => "Yes they can edit"} : {"can_edit" => "No they can't edit"}
+      # hash.merge!(editable)
       #hash.merge!("tags" => self.tags)
 
   end

@@ -13,6 +13,9 @@ gem "pg_search"
 gem 'kaminari'
 gem "squeel"
 
+gem "figaro"
+gem 'newrelic_rpm'
+
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Gems used only for assets and not required

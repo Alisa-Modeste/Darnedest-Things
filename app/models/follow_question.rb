@@ -1,5 +1,5 @@
 class FollowQuestion < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :user_id, :question_id
 
   belongs_to(
     :user,

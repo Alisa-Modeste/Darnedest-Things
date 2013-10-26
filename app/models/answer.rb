@@ -21,7 +21,7 @@ class Answer < ActiveRecord::Base
   def add_notification
 		users = FollowQuestion.select(:user_id).where(question_id: self.question_id)
 		
-		rows = users.map {|user| {follower_id: user.user_id, question_id: self.question_id, seen: false } }
+		rows = users.map {|user| {follower_id: user.user_id, question_id: self.question_id, answer_id: self.id, seen: false } }
 		FollowQuestionNotification.create(rows)
 	end
 end

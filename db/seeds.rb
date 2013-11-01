@@ -10,8 +10,8 @@
 
 #u=User.where(email: 'addd').first_or_initialize
 
-q = Question.where(title: "AAAAAAAaaaa").first_or_initialize
-q.update_attributes(user_id: 1, body: "Stuff")
+q = Question.where(title: "What is the best place to get a nice low-key dinner in LA?").first_or_initialize
+q.update_attributes(user_id: 1)
 
 q = Question.where(title: "BBBBBBBBBBBbbbbbbbbbbbbbbb").first_or_initialize
 q.update_attributes(user_id: 1, body: "More Stuff")

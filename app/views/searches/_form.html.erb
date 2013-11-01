@@ -1,20 +1,22 @@
-<form method="post" action="<%= search_url %>">
+<form method="post" action="<%= search_url %>" id='search'>
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>
-   Search for an Answer
-    <input type="text" name="search" id="search">
-  </label>
+  <h1>Search for an Answer</h1>
 
+    <input type="text" name="search" id="search">
+
+<br>
   <label>
     Tags
+    <br>
     <input type="text" name="search_tags" id="search_tags">
   </label>
 
   <label>
-    Check if you want only want questions with all tags
     <input type="checkbox" name="all_tags" id="all_tags" value="true">
+    Check if you want only want the questions with all the tags
   </label>
 
+  <br>
   <input type="submit">
 </form>
 

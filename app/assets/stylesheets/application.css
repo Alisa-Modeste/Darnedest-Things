@@ -265,3 +265,9 @@ body {
 #user-list li {
   margin-bottom: 30px;
 }
+
+
+/* Search */
+#search {
+  width: 500px;
+}

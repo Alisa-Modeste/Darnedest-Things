@@ -16,3 +16,5 @@
 
 .DS_Store
 config/database.mine.yml
+# Ignore application configuration
+/config/application.yml

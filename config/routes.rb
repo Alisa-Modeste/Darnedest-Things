@@ -16,7 +16,7 @@ WisdomCrowd::Application.routes.draw do
   end
 
   resources :answers, only: :show
-  resource :search, only: [:create]
+  resource :search, only: [:create, :new]
   resources :searches, only: [:index]
 
   resources :tags, only: [:show, :index]

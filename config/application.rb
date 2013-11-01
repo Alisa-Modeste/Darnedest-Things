@@ -60,6 +60,9 @@ module WisdomCrowd
     config.assets.version = '1.0'
 
   	#If home, use that one
-  #	self.paths['config/database'] = (File.exists? ('config/database.mine.yml')) ? 'config/database.mine.yml' : 'config/database.yml'
+  	self.paths['config/database'] = (File.exists? ('config/database.mine.yml')) ? 'config/database.mine.yml' : 'config/database.yml'
+
+    #The db isn't set up on heroku yet
+    config.assets.initialize_on_precompile = false
   end
 end

@@ -1,0 +1,21 @@
+  <%#= stylesheet_link_tag    "questions", :media => "all" %>
+
+<!--   <aside id="page-count">
+  Page X of Y
+</aside> -->
+
+<%# yield: user if yield: user %>
+
+<section id="answer-stream">
+<ul>
+  <% n = 15 %>
+  <% @answers.each do |answer| %>
+    <li>
+      <strong><%= answer.question.title %></strong>
+      <br>
+      <%= answer.response.split(/\s+/, n+1)[0...n].join(' ') %>
+    </li>
+  <% end %>
+</ul>
+
+</section>

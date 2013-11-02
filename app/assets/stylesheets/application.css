@@ -265,3 +265,13 @@ body {
 #user-list li {
   margin-bottom: 30px;
 }
+
+
+/* Search */
+#search {
+  width: 500px;
+}
+
+/*#mini-search {
+  width: 250px;
+}*/

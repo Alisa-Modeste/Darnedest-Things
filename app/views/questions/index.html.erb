@@ -13,7 +13,7 @@
     <li>
       <strong><%= question.title %></strong>
       <br>
-      <%= question.body.split(/\s+/, n+1)[0...n].join(' ') %>
+      <%= question.body.split(/\s+/, n+1)[0...n].join(' ') if question.body %>
     </li>
   <% end %>
 </ul>

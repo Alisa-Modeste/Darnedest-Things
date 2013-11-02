@@ -4,7 +4,7 @@ class SearchesController < ApplicationController
   def create
     search = params[:search]
     tags = params[:search_tags] == "" ? nil : params[:search_tags]
-    tags = format_tags(tags) unless nil?
+    tags = format_tags(tags) unless tags.nil?
 
     p "hey, the tags are",tags,
     all_tags = params[:all_tags] == "true"

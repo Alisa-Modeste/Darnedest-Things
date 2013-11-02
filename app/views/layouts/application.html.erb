@@ -24,8 +24,10 @@
 			<li> <a href="<%= questions_url %>">Questions</a></li>
 			<li> <a href="<%= users_url %>">People</a></li>
 			<%= "<li> <a href=' #{user_url(stored_current_user)} '>Your Profile</a></li>".html_safe if stored_current_user %>
-			<!-- <li><a href="<%#= new_session_url %>">Ask a Question</a></li> -->
 		</ul>
+    <%= render "searches/mini_form" %>
+    <br>
+    <a href="<%= new_search_url %>">Advanced search</a>
 	</nav>
 </header>
 

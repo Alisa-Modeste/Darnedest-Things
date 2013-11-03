@@ -6,7 +6,9 @@ WisdomCrowd::Application.routes.draw do
   root :to => 'root#index'
 
   resource :session, only: [:new, :create, :destroy]
-  resources :followings, only: [:index, :create, :destroy]
+  
+  resources :feed, only: [:index], controller: "followings"
+  resources :followings, only: [:create, :destroy]
 
   resources :users do #, except: :index do
     resources :answers, :questions, only: :index

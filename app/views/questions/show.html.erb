@@ -2,16 +2,16 @@
 <% #TODO: Does calling @question.answers multiple times make multiple queries %>
 <% #TODO: Remove div %>
 <br>
-<strong>Question</strong> <br>
-<p style="margin: 10px"><%= @question.title %> <br>
-<%= @question.body%><br>
+<h3>Question</h3>
+<h2><%= @question.title %></h2> 
+<p style="margin: 10px"><%= @question.body%></p>
 
 <% @question.tags.each do |tag| %>
   <%= tag.name %>
-<% end %></p>
+<% end %>
 
 <% length = @question.answers.length %>
-<strong><%= length %> Answer<%= "s" unless length == 1 %></strong>
+<h3><%= length %> Answer<%= "s" unless length == 1 %></h3>
 
 <ul>
   <% @question.answers.each do |answer| %>

@@ -1,9 +1,3 @@
-  <%= stylesheet_link_tag    "questions", :media => "all" %>
-
-  <aside id="page-count">
-  Page X of Y
-</aside>
-
 <%# yield: user if yield: user %>
 
 <section id="question-stream">
@@ -11,11 +5,17 @@
   <% n = 15 %>
   <% @questions.each do |question| %>
     <li>
-      <strong><%= question.title %></strong>
-      <br>
-      <%= question.body.split(/\s+/, n+1)[0...n].join(' ') if question.body %>
+		<a href="<%= question_url(question.id) %>">
+		  <strong><%= question.title %></strong>
+		  <br>
+		  <%= question.body.split(/\s+/, n+1)[0...n].join(' ') if question.body %>
+		</a>
     </li>
   <% end %>
 </ul>
+
+	<% if @questions.length == 0 %>
+		There were no questions found.
+	<% end %>
 
 </section>

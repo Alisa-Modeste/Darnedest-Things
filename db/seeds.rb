@@ -7,79 +7,37 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-
-#u=User.where(email: 'addd').first_or_initialize
-
 q = Question.where(title: "What is the best place to get a nice low-key dinner in LA?").first_or_initialize
 q.update_attributes(user_id: 1)
 
-q = Question.where(title: "BBBBBBBBBBBbbbbbbbbbbbbbbb").first_or_initialize
-q.update_attributes(user_id: 1, body: "More Stuff")
+q = Question.where(title: "What was your favorite book as a kid?").first_or_initialize
+q.update_attributes(user_id: 1, body: "I loved Ender's Game. I read it now and again and I still treasure it.")
 
-q = Question.where(title: "Recent Developments in the World of Pastrami").first_or_initialize
-q.update_attributes(user_id: 2, body: "Recent Developments and Prosciutto and You: A Retrospective")
+q = Question.where(title: "What did you eat last night?").first_or_initialize
+q.update_attributes(user_id: 2, body: "My answer: Chicken parmesan.")
 
-q = Question.where(title: "So tired!").first_or_initialize
-q.update_attributes(user_id: 2, body: "I snoozed my alarm for fourteen hours today. I bet I can beat that tomorrow! #sleepy")
+q = Question.where(title: "So tired! How can I get more/better sleep?").first_or_initialize
+q.update_attributes(user_id: 2)
 
-Question.create([
+q = Question.where(title: "How many kids did you want as a kid? How many do you have now?").first_or_initialize
+q.update_attributes(user_id: 2, body: "I wanted six, but I'm satisfied with my one now")
 
-  {
-    user_id: 2,
-    title: "Movies?",
-    body: "Have you seen Woody Allen's movie entitled Sleeper? Me neither. #boycott"
-  },
+Tag.where(name: "eating").first_or_initialize
+Tag.where(name: "quality-of-life").first_or_initialize
+Tag.where(name: "books").first_or_initialize
+Tag.where(name: "survey").first_or_initialize
+Tag.where(name: "biggest").first_or_initialize
 
-  {
-    user_id: 2,
-    title: "Copied this!",
-    body: "I have a rails 4 application where users define for example a tools database and creates fields that store items like brand, year, etc. Then a CRUD interface is presented before them, based on the fields they defined.\r\n\r\nRight now I have a Database model that looks like this:\r\n\r\nclass Database < ActiveRecord::Base\r\n\r\n  has_many :fields\r\nand a Field Model that looks like this:\r\n\r\nclass Field < ActiveRecord::Base\r\n  belongs_to :database\r\nBasically, right now on the Add Fields page (which is after you have a created a database and defined the fields), I'm creating a unique id and storing that with all the fields on that page, which I then use to group fields into a \"row\" (using a rails groupby statement).\r\n\r\nI have two questions: 1. Is the most efficient way to implement a \"database\"? 2. I can't figure out how to best link the field names you define when you create the database with the fields in the CRUD interface. So for example, If I create a name field when I'm initially defining all of the fields, how can I have it associated with fields in the CRUD interface?\r\n\r\nThanks for all help! If I need to clarify more, please tell!"
-  }
+Tagging.where([tag_id: , tag_id: ]).first_or_initialize
 
-]);
+u = User.where(email: ).first_or_initialize
+u.update_attributes({password: , name: })
 
-Tag.create([
-  {
-    name: "Dogs"
-  },
-  {
-    name: "Cats"
-  },
-  {
-    name: "Farming"
-  }
-]);
+u = User.where(email: ).first_or_initialize
+u.update_attributes({password: , name: })
 
-Tagging.create([
-  {
-    tag_id: 1,
-    question_id: 1
-  },
-
-  {
-    tag_id: 2,
-    question_id: 1
-  },
-
-  {
-    tag_id: 1,
-    question_id: 2
-  }
-]);
-
-User.create([
-  {
-    email: "a",
-    password: "a",
-    name: "a"
-  },
-
-  {
-    email: "b",
-    password: "b",
-    name: "b"
-  }
-])
+u = User.where(email: ).first_or_initialize
+u.update_attributes({password: , name: })
 
 Answer.create([
   {

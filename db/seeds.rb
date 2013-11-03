@@ -19,26 +19,25 @@ q.update_attributes(user_id: 2, body: "My answer: Chicken parmesan.")
 q = Question.where(title: "So tired! How can I get more/better sleep?").first_or_initialize
 q.update_attributes(user_id: 2)
 
+q = Question.where(title: "How many kids did you want as a kid? How many do you have now?").first_or_initialize
+q.update_attributes(user_id: 2, body: "I wanted six, but I'm satisfied with my one now")
+
 Tag.where(name: "eating").first_or_initialize
 Tag.where(name: "quality-of-life").first_or_initialize
 Tag.where(name: "books").first_or_initialize
+Tag.where(name: "survey").first_or_initialize
+Tag.where(name: "biggest").first_or_initialize
 
 Tagging.where([tag_id: , tag_id: ]).first_or_initialize
 
+u = User.where(email: ).first_or_initialize
+u.update_attributes({password: , name: })
 
-User.create([
-  {
-    email: "a",
-    password: "a",
-    name: "a"
-  },
+u = User.where(email: ).first_or_initialize
+u.update_attributes({password: , name: })
 
-  {
-    email: "b",
-    password: "b",
-    name: "b"
-  }
-])
+u = User.where(email: ).first_or_initialize
+u.update_attributes({password: , name: })
 
 Answer.create([
   {

@@ -45,13 +45,13 @@ u = User.where(email: "bob@gmail.com").first_or_initialize
 u.update_attributes({password: "Fluffy123", name: "Bob Parker"})
 
 u = User.where(email: "tom@aol.com").first_or_initialize
-u.update_attributes({password: "SecurePassword1", name: ""})
+u.update_attributes({password: "SecurePassword1", name: "tom"})
 
 u = User.where(email: "jill@live.com").first_or_initialize
 u.update_attributes({password: "Hacker4Life", name: "Jill Scott"})
 
 u = User.where(email: "silent@live.com").first_or_initialize
-u.update_attributes({password: "NoOneNoticesMe", name: ""})
+u.update_attributes({password: "NoOneNoticesMe", name: "silent"})
 
 
 a = Answer.where({question_id: 1, user_id: 1}).first_or_initialize

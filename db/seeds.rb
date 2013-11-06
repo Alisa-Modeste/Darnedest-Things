@@ -22,24 +22,24 @@ q.update_attributes(user_id: 2)
 q = Question.where(title: "How many kids did you want as a kid? How many do you have now?").first_or_initialize
 q.update_attributes(user_id: 2, body: "I wanted six, but I'm satisfied with my one now")
 
-Tag.where(name: "eating").first_or_initialize
+Tag.where(name: "eating").first_or_initial{ize
 Tag.where(name: "quality-of-life").first_or_initialize
 Tag.where(name: "books").first_or_initialize
 Tag.where(name: "survey").first_or_initialize
 Tag.where(name: "most").first_or_initialize
 
-Tagging.where([tag_id: 1, question_id: 1]).first_or_initialize
-Tagging.where([tag_id: 1, question_id: 3]).first_or_initialize
-Tagging.where([tag_id: 2, question_id: 4]).first_or_initialize
-Tagging.where([tag_id: 3, question_id: 2]).first_or_initialize
-Tagging.where([tag_id: 4, question_id: 2]).first_or_initialize
-Tagging.where([tag_id: 4, question_id: 3]).first_or_initialize
-Tagging.where([tag_id: 4, question_id: 5]).first_or_initialize
-Tagging.where([tag_id: 5, question_id: 1]).first_or_initialize
-Tagging.where([tag_id: 5, question_id: 2]).first_or_initialize
-Tagging.where([tag_id: 5, question_id: 3]).first_or_initialize
-Tagging.where([tag_id: 5, question_id: 4]).first_or_initialize
-Tagging.where([tag_id: 5, question_id: 5]).first_or_initialize
+Tagging.where({tag_id: 1, question_id: 1}).first_or_initialize
+Tagging.where({tag_id: 1, question_id: 3}).first_or_initialize
+Tagging.where({tag_id: 2, question_id: 4}).first_or_initialize
+Tagging.where({tag_id: 3, question_id: 2}).first_or_initialize
+Tagging.where({tag_id: 4, question_id: 2}).first_or_initialize
+Tagging.where({tag_id: 4, question_id: 3}).first_or_initialize
+Tagging.where({tag_id: 4, question_id: 5}).first_or_initialize
+Tagging.where({tag_id: 5, question_id: 1}).first_or_initialize
+Tagging.where({tag_id: 5, question_id: 2}).first_or_initialize
+Tagging.where({tag_id: 5, question_id: 3}).first_or_initialize
+Tagging.where({tag_id: 5, question_id: 4}).first_or_initialize
+Tagging.where({tag_id: 5, question_id: 5}).first_or_initialize
 
 u = User.where(email: "bob@gmail.com").first_or_initialize
 u.update_attributes({password: "Fluffy123", name: "Bob Parker"})
@@ -54,26 +54,26 @@ u = User.where(email: "silent@live.com").first_or_initialize
 u.update_attributes({password: "NoOneNoticesMe", name: ""})
 
 
-a = Answer.where([question_id: 1, user_id: 1]).first_or_initialize
+a = Answer.where({question_id: 1, user_id: 1}).first_or_initialize
 a.update_attributes(response: "I've enjoyed myself at a little bistro near Holland. They are a little family run business and their food is to die for.")
 
-a = Answer.where([question_id: 2, user_id: 1]).first_or_initialize
+a = Answer.where({question_id: 2, user_id: 1}).first_or_initialize
 a.update_attributes(response: "My favorite book was Anne of Green Gables believe it or not. I admired her wit and her spunk. I consider her a personal role model to this day.")
 
-a = Answer.where([question_id: 2, user_id: 2]).first_or_initialize
+a = Answer.where({question_id: 2, user_id: 2}).first_or_initialize
 a.update_attributes(response: "My favorite was Green Eggs and Ham. I was so proud of myself. It was the first book I could read all on my own.")
 
-a = Answer.where([question_id: 2, user_id: 3]).first_or_initialize
+a = Answer.where({question_id: 2, user_id: 3}).first_or_initialize
 a.update_attributes(response: "I was comforted in my own struggles by reading Are You There God? It's Me, Margaret.")
 
-a = Answer.where([question_id: 4, user_id: 1]).first_or_initialize
+a = Answer.where({question_id: 4, user_id: 1}).first_or_initialize
 a.update_attributes(response: "The first thing to do is figure out why you aren't getting enough sleep. Are you actually not spending enough time in bed? Are you supposed to be asleep but awake worrying about your life? Can you not get comfortable? (Whether it's too hot or the bed's to lumpy or whatever.) Once you figure that out then you go about changing things. Keep a regular bedtime, decide to stop thinking about your cares once you get into the bed (take a break from them a solution might soon show itself), exercise 3 hours before bedtime.")
 
-a = Answer.where([question_id: 5, user_id: 1]).first_or_initialize
+a = Answer.where({question_id: 5, user_id: 1}).first_or_initialize
 a.update_attributes(response: "I have never wanted kids and never did have any. I'm 55.")
 
-a = Answer.where([question_id: 5, user_id: 2]).first_or_initialize
+a = Answer.where({question_id: 5, user_id: 2}).first_or_initialize
 a.update_attributes(response: "8 as a kid. Now I'm loving the two I have now (and don't want any more)")
 
-a = Answer.where([question_id: 5, user_id: 3]).first_or_initialize
+a = Answer.where({question_id: 5, user_id: 3}).first_or_initialize
 a.update_attributes(response: "33. (I was going to adopt.)")

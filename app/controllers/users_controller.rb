@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :ensure_logged_in, only: [:show]
+  before_filter :ensure_logged_in, only: [:show, :update]
 
   def create
     user = User.new(params[:user])
@@ -23,5 +23,13 @@ class UsersController < ApplicationController
   def index
     @users = User.page(params[:page]).per(50)
     render :index
+  end
+
+  def update
+    attributes = params[:user]
+    attributes.delete_if {|k,v| v == "" }
+
+    self.current_user.update_attributes(attributes)
+    render json: self.current_user
   end
 end

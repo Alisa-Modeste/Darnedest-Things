@@ -1,3 +1,6 @@
-<form method="POST" action="<%= users_url %>">
+<h2>Edit Your Info</h2>
+<p>Anything left blank will not be updated</p>
+
+<form method="POST" action="<%= user_url(params[:id]) %>">
   <input type="hidden" name="_method" value="PUT">
 <%= render "users/attr_form" %>

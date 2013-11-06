@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   validates :name, :presence => { :message => "'Name to Display' can't be blank" }
   validates :email, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, on: :create
 
   before_validation :ensure_session_token
 

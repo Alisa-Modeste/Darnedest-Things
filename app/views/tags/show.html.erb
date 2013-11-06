@@ -1,8 +1,3 @@
-You made it
-<%= @tag.name %>
-<% n = 30 %>
-<ul>
-  <% @tag.questions.each do |question| %>
-    <li><a href="<%= question_url(question.id) %>"><%= question.title %> <%= question.body.split(/\s+/, n+1)[0...n].join(' ') %></a></li>
-  <% end %>
-</ul>
+Questions tagged with <%= @tag.name %>
+
+<%= render "questions/list" %>

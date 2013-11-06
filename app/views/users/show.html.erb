@@ -17,7 +17,7 @@
 <% else %>
   <ul>
     <% @user.questions[0..4].each do |question| %>
-      <li><%= question.title %></li>
+      <li><a href="<%= question_url(question.id) %>"><%= question.title %></a></li>
     <% end %>
   </ul>
 <% end %>
@@ -30,7 +30,7 @@
   <ul>
     <% n = 15 %>
     <% @user.answers[0..4].each do |answer| %>
-      <li><%= answer.response.split(/\s+/, n+1)[0...n].join(' ') %></li>
+      <li><a href="<%= answer_url(answer.id) %>"><%= answer.response.split(/\s+/, n+1)[0...n].join(' ') %></a></li>
     <% end %>
   </ul>
 <% end %>

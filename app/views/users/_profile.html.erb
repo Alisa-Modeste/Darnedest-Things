@@ -3,7 +3,8 @@
 
   Name: <%= @user.name %>
   <br>
-  Password: <a href='#'>Change your password</a>
-  <br>
   Email address: <%= @user.email %>
+
+  <br>
+  <%= link_to "Update your info", edit_user_url(@user.id) %>
 <%# end%>

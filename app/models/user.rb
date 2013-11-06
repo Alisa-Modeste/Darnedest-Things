@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password
   attr_reader :password
 
+  validates :name, :presence => { :message => "'Name to Display' can't be blank" }
+  validates :email, presence: true
+  validates :password, presence: true
+
   before_validation :ensure_session_token
 
   has_many(
@@ -84,7 +88,10 @@ class User < ActiveRecord::Base
 
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)
+    p "In pass"
+    @password = password
   end
+
 
   # def self.get_follows(user)
   #   user_ids = user.followed_user_ids

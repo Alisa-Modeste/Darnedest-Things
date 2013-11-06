@@ -7,7 +7,7 @@ WisdomCrowd::Application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
-  resources :users do #, except: :index do
+  resources :users, except: :new do
     resources :answers, :questions, only: :index
   end
 

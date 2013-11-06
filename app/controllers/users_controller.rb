@@ -2,10 +2,6 @@ class UsersController < ApplicationController
 
   before_filter :ensure_logged_in, only: [:show]
 
-  def new
-    render :new
-  end
-
   def create
     user = User.new(params[:user])
 
@@ -13,8 +9,8 @@ class UsersController < ApplicationController
       self.current_user = user
       redirect_to root_url
     else
-      flash.now[:notice] = user.errors.full_messages
-      render :new
+      flash.now[:notice] = user.errors.messages.values.join("\n")
+      render "sessions/new"
     end
   end
 

@@ -17,7 +17,6 @@ WisdomCrowd::Application.routes.draw do
 
   resources :answers, only: :show
   resource :search, only: [:create, :new]
-  resources :searches, only: [:index]
 
   resources :tags, only: [:show, :index]
 

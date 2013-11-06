@@ -24,6 +24,6 @@
 <section id="sign-up" class="new-session">
   <h2>Sign Up</h2>
 
-
-  <% render "users/new_form" %>
+<form method="POST" action="<%= users_url %>">
+  <%= render "users/attr_form" %>
 </section>

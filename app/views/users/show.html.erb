@@ -15,7 +15,7 @@
 <% if @user.questions.length == 0 %>
   <%= "#{body_text} not asked any questions"%>
 <% else %>
-  <ul>
+  <ul class="user-show">
     <% @user.questions[0..4].each do |question| %>
       <li><a href="<%= question_url(question.id) %>"><%= question.title %></a></li>
     <% end %>
@@ -27,7 +27,7 @@
 <% if @user.answers.length == 0 %>
   <%= "#{body_text} not answered any questions"%>
 <% else %>
-  <ul>
+  <ul class="user-show">
     <% n = 15 %>
     <% @user.answers[0..4].each do |answer| %>
       <li><a href="<%= answer_url(answer.id) %>"><%= answer.response.split(/\s+/, n+1)[0...n].join(' ') %></a></li>

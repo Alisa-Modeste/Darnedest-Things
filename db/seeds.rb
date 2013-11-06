@@ -22,24 +22,24 @@ q.update_attributes(user_id: 2)
 q = Question.where(title: "How many kids did you want as a kid? How many do you have now?").first_or_initialize
 q.update_attributes(user_id: 2, body: "I wanted six, but I'm satisfied with my one now")
 
-Tag.where(name: "eating").first_or_initial{ize
-Tag.where(name: "quality-of-life").first_or_initialize
-Tag.where(name: "books").first_or_initialize
-Tag.where(name: "survey").first_or_initialize
-Tag.where(name: "most").first_or_initialize
+Tag.where(name: "eating").first_or_create
+Tag.where(name: "quality-of-life").first_or_create
+Tag.where(name: "books").first_or_create
+Tag.where(name: "survey").first_or_create
+Tag.where(name: "most").first_or_create
 
-Tagging.where({tag_id: 1, question_id: 1}).first_or_initialize
-Tagging.where({tag_id: 1, question_id: 3}).first_or_initialize
-Tagging.where({tag_id: 2, question_id: 4}).first_or_initialize
-Tagging.where({tag_id: 3, question_id: 2}).first_or_initialize
-Tagging.where({tag_id: 4, question_id: 2}).first_or_initialize
-Tagging.where({tag_id: 4, question_id: 3}).first_or_initialize
-Tagging.where({tag_id: 4, question_id: 5}).first_or_initialize
-Tagging.where({tag_id: 5, question_id: 1}).first_or_initialize
-Tagging.where({tag_id: 5, question_id: 2}).first_or_initialize
-Tagging.where({tag_id: 5, question_id: 3}).first_or_initialize
-Tagging.where({tag_id: 5, question_id: 4}).first_or_initialize
-Tagging.where({tag_id: 5, question_id: 5}).first_or_initialize
+Tagging.where({tag_id: 1, question_id: 1}).first_or_create
+Tagging.where({tag_id: 1, question_id: 3}).first_or_create
+Tagging.where({tag_id: 2, question_id: 4}).first_or_create
+Tagging.where({tag_id: 3, question_id: 2}).first_or_create
+Tagging.where({tag_id: 4, question_id: 2}).first_or_create
+Tagging.where({tag_id: 4, question_id: 3}).first_or_create
+Tagging.where({tag_id: 4, question_id: 5}).first_or_create
+Tagging.where({tag_id: 5, question_id: 1}).first_or_create
+Tagging.where({tag_id: 5, question_id: 2}).first_or_create
+Tagging.where({tag_id: 5, question_id: 3}).first_or_create
+Tagging.where({tag_id: 5, question_id: 4}).first_or_create
+Tagging.where({tag_id: 5, question_id: 5}).first_or_create
 
 u = User.where(email: "bob@gmail.com").first_or_initialize
 u.update_attributes({password: "Fluffy123", name: "Bob Parker"})

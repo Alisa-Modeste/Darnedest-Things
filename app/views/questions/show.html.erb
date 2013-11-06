@@ -3,7 +3,7 @@
 <% #TODO: Remove div %>
 <br>
 <h3>Question</h3>
-<h2><%= @question.title %></h2> 
+<h2><%= @question.title %></h2>
 <p style="margin: 10px"><%= @question.body%></p>
 
 <% @question.tags.each do |tag| %>
@@ -13,7 +13,7 @@
 <% length = @question.answers.length %>
 <h3><%= length %> Answer<%= "s" unless length == 1 %></h3>
 
-<ul>
+<ul id="answers">
   <% @question.answers.each do |answer| %>
     <li><a id="<%= answer.id %>"></a><%= answer.response %></li>
   <% end %>
@@ -23,8 +23,9 @@
 <form method="post" action="<%= question_answers_url(@question.id) %>">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <textarea cols="40" rows="4" name="answer[response]"></textarea>
+  <textarea cols="80" rows="8" name="answer[response]"></textarea>
 
+  <br>
   <input type="submit">
 
 </form>

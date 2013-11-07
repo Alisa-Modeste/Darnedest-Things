@@ -5,6 +5,8 @@
 class Question < ActiveRecord::Base
    attr_accessible :title, :body, :user_id
 
+   validates :title, presence: true, uniqueness: { :message => "A question with this title has already been asked" }
+
   include PgSearch
   pg_search_scope :search_question,
             against: [:title, :body],

@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password
   attr_reader :password
 
-  validates :name, :presence => { :message => "'Name to Display' can't be blank" }
-  validates :email, presence: true
+  validates :name, presence: { :message => "'Name to Display' can't be blank" }
+  validates :email, presence: true, uniqueness: { :message => "Email address is already being used" }
   validates :password, presence: true, on: :create
 
   before_validation :ensure_session_token

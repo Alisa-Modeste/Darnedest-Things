@@ -22,8 +22,6 @@ class QuestionsController < ApplicationController
 
     tags = params[:question_tags]
     tags = format_tags(tags) unless tags.nil?
-      
-    end
 
     found_tags = {}
     Tag.where(name: tags).select([:id, :name]).each{ |x| found_tags[ "_#{x.id}" ] = x.name }

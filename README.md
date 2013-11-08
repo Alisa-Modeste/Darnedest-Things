@@ -1,7 +1,7 @@
 Darnedest Things
 ====================
 
-This app is live at [Darnedest Things](http://www.darnedestthings.com). It is a Quora clone (the question and answer site).
+This app is live at [Darnedest Things](http://www.darnedestthings.com). It is inspired by Quora (the question and answer site).
 
 ##Users can
 

@@ -30,6 +30,6 @@ class UsersController < ApplicationController
     attributes.delete_if {|k,v| v == "" }
 
     self.current_user.update_attributes(attributes)
-    render json: self.current_user
+    redirect_to user_url(self.current_user)
   end
 end

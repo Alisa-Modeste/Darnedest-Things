@@ -8,7 +8,7 @@
 
 <ul id="tags" class="clf">
 	<% @question.tags.each do |tag| %>
-	  <li><%= tag.name %></li>
+	  <li><a href="<%= tag_url(tag.id) %>"><%= tag.name %></a></li>
 	<% end %>
 </ul>
 
@@ -31,5 +31,3 @@
   <input type="submit" value="Submit">
 
 </form>
-
-<div style="height: 2000px">

@@ -1,12 +1,12 @@
-Tags
+<h2>Browse by Tags</h2>
 <div id="tagcloud">
   <% @tags.each_with_index do |tag, i| %>
     <a href="<%= tag_url(tag.id) %>" rel=" <%= tag.questions.length %> "><%= tag.name %></a>
   <% end %>
   
-  <%= paginate @tags %>
 </div>
 
+<%= paginate @tags %>
 
 
 <script>

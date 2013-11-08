@@ -6,6 +6,7 @@
 <h2><%= @question.title %></h2>
 <p style="margin: 10px"><%= @question.body%></p>
 
+<p>By <a href="<%= user_url(@question.user.id) %>"><%= @question.user.name %></a></p>
 <ul id="tags" class="clf">
 	<% @question.tags.each do |tag| %>
 	  <li><a href="<%= tag_url(tag.id) %>"><%= tag.name %></a></li>
@@ -17,7 +18,9 @@
 
 <ul id="answers">
   <% @question.answers.each do |answer| %>
-    <li><a id="<%= answer.id %>"></a><%= answer.response %></li>
+    <li><a id="<%= answer.id %>"></a><%= answer.response %>
+      <br>
+    <br>By <a href="<%= user_url(answer.user.id) %>"><%= answer.user.name %></a></li>
   <% end %>
 </ul>
 
@@ -31,3 +34,5 @@
   <input type="submit" value="Submit">
 
 </form>
+
+<div style="height: 2000px"></div>

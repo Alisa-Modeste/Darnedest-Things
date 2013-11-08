@@ -79,18 +79,18 @@ img {
 #tags {
 	display: block;
 	margin-top: 20px;
-	
+
 }
 
 #tags li {
 	float: left;
-	
+
 	height: 18px;
 	background: #ffffcc;
 	padding: 10px;
 	margin: 10px;
 	border-radius: 5px;
-	
+
 	box-shadow: 5px 5px 5px #888
 }
 
@@ -139,6 +139,10 @@ img {
 	margin: 30px auto;
 	width: 700px
 
+}
+
+ul.tagit {
+ width: 90%;
 }
 
 

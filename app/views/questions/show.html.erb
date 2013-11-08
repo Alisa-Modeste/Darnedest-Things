@@ -6,12 +6,14 @@
 <h2><%= @question.title %></h2>
 <p style="margin: 10px"><%= @question.body%></p>
 
-<% @question.tags.each do |tag| %>
-  <%= tag.name %>
-<% end %>
+<ul id="tags" class="clf">
+	<% @question.tags.each do |tag| %>
+	  <li><%= tag.name %></li>
+	<% end %>
+</ul>
 
 <% length = @question.answers.length %>
-<h3><%= length %> Answer<%= "s" unless length == 1 %></h3>
+<h3 class="clf" id="answers-header"><%= length %> Answer<%= "s" unless length == 1 %></h3>
 
 <ul id="answers">
   <% @question.answers.each do |answer| %>

@@ -76,6 +76,32 @@ img {
   z-index: 1;
 }
 
+#tags {
+	display: block;
+	margin-top: 20px;
+	
+}
+
+#tags li {
+	float: left;
+	
+	height: 18px;
+	background: #ffffcc;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	
+	box-shadow: 5px 5px 5px #888
+}
+
+#tags li:first-child {
+	margin-left: 0;
+}
+
+#answers-header {
+	margin-top: 70px;
+}
+
 #answers article{
 	display: block;
 	width: 700px;
@@ -260,6 +286,7 @@ header h2 em{
 .clf {
 	clear: both;
 	display: table;
+	content: "";
 }
 
 a {
@@ -273,19 +300,9 @@ a:hover {
 #sidebar {
 	border: 1px solid black
 }
-html {
-/**/
-  background-image:url("../images/gradient01.jpeg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 
-}
 
-body {
-/*  background: #F0F8FF;*/
-}
+
 
 /* Users */
 

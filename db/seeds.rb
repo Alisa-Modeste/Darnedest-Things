@@ -53,6 +53,9 @@ u.update_attributes({password: "Hacker4Life", name: "Jill Scott"})
 u = User.where(email: "silent@live.com").first_or_initialize
 u.update_attributes({password: "NoOneNoticesMe", name: "silent"})
 
+u = User.where(email: "demo@demo.com").first_or_initialize
+u.update_attributes({password: "demo", name: "demo"})
+
 
 a = Answer.where({question_id: 1, user_id: 1}).first_or_initialize
 a.update_attributes(response: "I've enjoyed myself at a little bistro near Holland. They are a little family run business and their food is to die for.")

@@ -7,7 +7,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find(params[:id])
-    @questions = @tag.questions
+    @questions = @tag.questions.page(params[:page]).per(2)
     render :show
   end
 end

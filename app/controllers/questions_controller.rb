@@ -50,7 +50,7 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.page(params[:page]).per(30)
+    @questions = Question.page(params[:page]).per(2)
     render :index
   end
 

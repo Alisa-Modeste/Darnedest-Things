@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
 
   def index
-    @tags = Tag.includes(:questions).order(:name).page(params[:page]).per(40)
+    @tags = Tag.includes(:questions).order(:name).page(params[:page]).per(4)
     render :index
   end
 

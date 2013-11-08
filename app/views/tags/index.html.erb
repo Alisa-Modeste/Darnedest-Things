@@ -3,6 +3,8 @@ Tags
   <% @tags.each_with_index do |tag, i| %>
     <a href="<%= tag_url(tag.id) %>" rel=" <%= tag.questions.length %> "><%= tag.name %></a>
   <% end %>
+  
+  <%= paginate @tags %>
 </div>
 
 

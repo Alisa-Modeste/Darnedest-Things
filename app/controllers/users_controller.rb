@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.page(params[:page]).per(50)
+    @users = User.page(params[:page]).per(5)
     render :index
   end
 

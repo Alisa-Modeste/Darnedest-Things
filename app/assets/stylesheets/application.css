@@ -339,3 +339,11 @@ ul.user-show {
   z-index: 1;
   background-color: #cbd4e1;
 }
+
+#homepage {
+	margin: 30px auto 30px 90px;
+	width: 500px;
+	background-color: #cbd4e1;
+	border-radius: 14px;
+	padding: 50px
+}
